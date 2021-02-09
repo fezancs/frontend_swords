@@ -18,7 +18,7 @@ COPY . /app
 EXPOSE 4200
 
 # start app
-CMD ng serve --host 35.194.5.67
+CMD ng serve 
 
 
 
