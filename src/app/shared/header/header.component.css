@@ -1,0 +1,362 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/*animated div*/
+.animated-div{
+  margin-left: -7vw;
+  background-color: blue;
+  width: 10VW;
+  padding: .5vw;
+  border-bottom-right-radius: .8vw;
+  border-top-right-radius: .8vw;
+  transition: 0.3s;
+  margin-bottom: .3vw;
+}
+.animated-div:hover{
+  margin-left: 0vw;
+}
+.animated-div h5{
+  font-size: 1vw;
+  padding:.5vw;
+  color: white;
+}
+.animated-div i{
+  font-size: 1.3vw;
+  padding:.5vw;
+  font-family: 'FontAwesome';
+  color: white;
+}
+/*animated div ended*/
+/*trending news*/
+.welcomediv p{
+  font-size: .9vw;
+  color: rgba(125,125,125,255);
+  margin-right: 2vw;
+  margin-top: .15vw;
+}
+.welcomediv h4{
+  font-size: 1.2vw;
+  color:  #a81000;
+  left: 1vw;
+  position: absolute;
+}
+.swiper-button-prev-trending , .swiper-button-next-trending{
+  width: 1.5vw;
+  height: 1.7vw;
+  font-size: 1vw;
+  text-align: center;
+  border: none;
+  margin: .1vw 0vw;
+}
+/*trending news end*/
+
+
+
+/*logo*/
+.nav-3{
+  justify-content: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 8vw;
+  margin-bottom: .5vw;
+}
+
+/*dropdown*/
+.dropbtn {
+  background-color: transparent;
+  color: rgba(255,255,255,255);
+  font-size: 1vw;
+  border: none;
+  font-family:'Lato' ;
+  margin-right: 2vw;
+}
+.dropbtn a{
+   color: white;
+  font-size: 1vw; 
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown i{
+  font-size: .5vw; 
+  margin-left: .2vw;
+  font-family: 'FontAwesome'
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  z-index: 100;
+  font-size: 1vw;
+  min-width: 9vw;
+}
+.closed{
+  display: none;
+}
+.dropdown-content a { 
+background-color: #E9E9E9;
+color: black;
+padding: .5vw .5vw;
+text-decoration: none;
+display: block;
+width: 100%;
+}
+.div-inline{
+  display: inline;
+}
+.dropdown-content a:hover {
+  background-color: rgba(255,187,0,255);
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/*dropdown end*/
+/*cart*/
+.cart{
+  width: 20vw;
+  right: 10%;
+  position: absolute;
+  display: none;
+  z-index: 2;
+  background-color: #E9E9E9;
+  border-radius: .7vw;
+  padding: 1vw .5vw 1vw .5vw ;
+  margin-top: 2vw;
+ }
+ .cartdiv{
+   background-color: white;
+   width: 100%;
+   display: none;
+ }
+ .cartempty{
+   background-color: white;
+   width: 100%;
+   display: none;
+ }
+ .cartempty h2{
+   color: black;
+   font-size: 1vw;
+   font-family: 'Lato';
+   font-weight: bold;
+   padding: 1vw;
+ }
+ .cart-img{
+   width: 100%;
+   height: 4vw;
+ }
+ .cart-productname{
+   color: black;
+   font-size: 1vw;
+   font-family: 'Lato';
+   font-weight: bold;
+ }
+ .cart-productdetail{
+   color: black;
+   font-size: .8vw;
+   font-family: 'Lato'; 
+ }                
+ .cart-btn{
+   width: 100%;
+   color: white;
+   background-color:#a81000 ;
+   font-size: .8vw;
+   font-family: 'Lato';
+   font-weight: bold;
+   padding: .2vw;
+   margin-top: .3vw;
+   border: none;
+   outline: none;
+ }
+ .cart-btn:hover{
+   color:#a81000;
+   background-color: white;
+ }
+ .cart-cancelbtn{
+   color: black;
+   font-size: .8vw;
+   font-family: 'Lato'; 
+   background-color: white;
+   margin-right: .6vw;
+   outline: none;
+   border: white;
+ }
+ .cart-cancelbtn:hover{
+   color:#a81000;
+ }
+/*cart ended*/
+
+/*logo ended*/
+             
+/*nav2*/
+  .nav-2{
+    background-color: white;
+    width: 80%;
+    margin-bottom: 1vw;
+    padding: 0;
+    height: 3vw;
+  }
+  .nav-2 a{
+    font-size: 0.874998vw;
+    padding: 0vw 0vw; 
+    color: black;
+    font-weight: bold;
+    margin-left: 1.5vw; 
+    margin-right: 1.7vw;
+  }
+  .nav-2 a:hover{
+    text-decoration: none;
+    color: #a81000;
+  }
+  input[type=text] {
+     height: 3vw; 
+     width: 25vw; 
+     border:none;
+     padding:.4vw;
+     /* background-color: whitesmoke; */
+   -webkit-box-shadow:0 0 .2vw #666 inset;
+   -moz-box-shadow:0 0 .2vw #666 inset;
+   box-shadow:0 0 1vw whitesmoke inset;
+  }
+  .org-btn{
+    background-color: #a81000;
+    color: white;
+    width: 7vw;
+    height: inherit;
+    border: none;
+    font-size: .7vw;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .org-btn:hover{
+    color: black;
+  }
+
+.popularsearch{
+  background-color: white;
+  position: absolute;
+  z-index: 1000;
+  margin-top: 3.3vw;
+  padding: .6vw 0vw;
+  display: none;
+}
+.popularsearchleft{
+  padding: 0vw 1vw;
+}
+.popularsearchleft h1 , .popularsearchright h1{
+  font-size: .95vw;
+  padding: .3vw 0vw; 
+  color: black;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.popularsearchleft p{
+  font-size: 1vw;
+  color: rgba(125,125,125,255);
+  white-space: nowrap;
+}
+.popularsearchright{
+   padding: 0vw 1vw;
+}
+.imgbox{
+  width: 10vw;
+  margin-right: .3vw;
+}
+.imgbox img{
+  border: .1vw solid rgba(125,125,125,255);
+  height: 14vw;
+  width: 100%;
+  margin-bottom: .4vw;
+}
+.imgbox p {
+  font-size: 1vw;
+  color: rgba(125,125,125,255);
+  word-break: break-all;
+}
+.myCssClass{
+  display: block;
+}
+
+
+/*nav2 ended*/  
+/*slider*/
+.div1{
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0%;
+  left:0%;
+  position: absolute;
+  display: block;
+}
+#trends{
+  text-align: center;
+  white-space: nowrap;
+  font-size: 4vw;
+  color: rgba(255,255,255,255);
+}
+#trends-p{
+ text-align: center;
+ white-space: nowrap;
+ font-size: 0.89vw;
+ color: rgba(255,255,255,255);
+}
+span{
+  color: #a81000;
+}
+/*slider ended*/
+
+
+
+.wrap1 {  
+  position: relative;
+  overflow: hidden;
+  width: 23vw;
+  height: 3vw;
+  margin-top: -13vw;
+  margin-left: -3vw;
+}
+.wrap1 img {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.wrap1:before {
+  content: "";
+  z-index: 10;
+  position: absolute;
+  height: 200%;
+  width: 200%;
+  top: -120%;
+  left: -120%;
+  background: linear-gradient(transparent 0%, rgba(255, 255, 255, 0.1) 45%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.1) 55%, transparent 100%);
+  transition: all 300s; 
+  transform: rotate(-45deg);
+  animation: shine 30s infinite forwards;
+}
+@keyframes shine {
+  0% {
+    top: -120%;
+    left: -120%;
+  }
+  20% {
+    left: 100%;
+    top: 100%;
+  }
+  40% {
+    left: 100%;
+    top: 100%;
+  }
+  100% {
+    left: 100%;
+    top: 100%;
+  }
+}
+
+

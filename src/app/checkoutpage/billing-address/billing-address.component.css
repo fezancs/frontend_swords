@@ -1,0 +1,189 @@
+@media only screen and (max-width: 800px) {
+    *{
+      line-height: .5vw;
+    }
+    
+  }
+.container{
+	width: 100%;
+}
+.billing{
+    margin: 2vw 0vw;
+}
+.formdiv{
+    width: 100;
+    background-color: #E9E9E9;
+    margin-bottom: .3vw;
+}
+.formheader{
+    padding: .8vw;
+    color: black;
+    font-size: 1vw;
+    font-weight: bold;
+}
+.leftformheader{
+    padding: .3vw;
+    color: black;
+    font-size: .7vw;
+    font-weight: bold;
+}
+.formbody{
+    display: block;
+    background-color:#F8F8F8;
+}
+.formbutton{
+    margin-top: 1.7vw;
+}
+.form-group{
+    padding: 0vw .2vw .2vw .2vw;
+    margin-bottom: .5vw;
+}
+input[type=radio] , input[type=checkbox] {
+    border: 0px;
+    height: 1vw;
+    margin-right: 1vw;
+}
+.error{
+    color: red;
+    font-size: .85vw;
+}
+.form-control.is-invalid{
+    border-color: red;
+    background-image: none;
+    box-shadow: none;
+}
+.red{
+    color: red;
+    margin-left: .3vw;
+    font-size: 1.2vw;
+}
+.checkoutprogress{
+    font-size: 1vw;
+    color: gray;
+    margin: 0vw  .3vw;
+}
+.checkout{
+    font-size: .85vw;
+    white-space: nowrap;
+    margin-bottom: .4vw;
+    margin-top: .9vw;
+}
+span{ display:block; width:90%; float:left; height:5px;}
+span:nth-child(1){
+  width: 10%;
+}
+.row{
+    margin-left: 0;
+}
+.line{
+    width:100%;
+    margin-bottom: .4vw;
+    margin-left: 0;
+}
+.color-1{
+    background:#a81000;
+    height: 0.2vh;
+}
+.color-2{
+    background:#DDDDDD;
+    height: 0.05vh;
+}
+hr {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  border: 0;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  width: 95%;
+  padding-left: 2vw;
+}
+.heading h1{
+	font-weight: bold;
+	font-size: 1.3vw;
+}
+form{
+	width: 100%;
+}
+.form-container{
+	padding-top: 3vw;
+	padding-bottom: 3vw;
+	padding-right: 5vw;
+	padding-left: 5vw;
+	width: 100%;
+}
+#order-note{
+	height: 8vw;
+}
+.checkout-form input , input{
+	border-radius: 1.2vw;
+    height: 2.5vw;
+    padding: .5vw;
+    font-size: 1vw;
+    font-family: 'Lato';
+    color: rgba(128,128,128,255);
+    margin-top: .5vw;
+}
+input:focus {
+    box-shadow: none;
+    border: .1vw solid #a81000;
+}
+.checkout-form label ,label{
+	font-style: none;
+	font-size: 0.7vw;
+	color: rgba(51,51,51,255);
+	font-family: 'Lato';
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.checkout-form button ,button{
+	white-space: nowrap;
+	border:1px solid #a81000;
+    background:#a81000;
+    font-family: 'Lato';
+    color:rgba(255,255,255,255);
+    padding: .3vw;
+    font-weight: bold;
+    font-size: 0.7vw;
+    margin: .5vw 1vw;
+}
+.custom-control-label{
+    white-space: nowrap;	
+}
+input::-webkit-input-placeholder {
+    font-size: .7vw;
+    font-family: 'Lato';
+    color: rgba(128,128,128,255);
+}
+
+
+/*payment info*/
+.payment h1{
+    font-size: 1.25vw;  
+    font-weight: bold;
+    font-family: 'Lato';
+    color: rgba(51,51,51,255);
+    margin-bottom: .5vw;
+  }
+  .payment h3{
+    font-size: 1vw; 
+    font-family: 'Lato';
+    font-weight: bold;
+    color: rgba(69,69,69,255);
+    margin-top: .1vw;
+    margin-bottom: .1vw;
+  }
+  .payment p{
+    font-size: 0.7vw;
+    color: rgba(148,148,148,255);  
+    margin-top: .1vw;
+    margin-bottom: .1vw;
+  }
+  hr{
+      margin-top: .2vw;
+      margin-bottom: .2vw;
+      border: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  #mypaypalbuttons{
+    width: 70%;
+    padding: .5vw;
+}

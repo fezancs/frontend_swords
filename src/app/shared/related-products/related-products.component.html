@@ -1,0 +1,51 @@
+<section class="row  justify-content-center" >
+    <div class="container related-products " style="padding: 2vw;">
+        <h3>RELATED PRODUCTS</h3>
+        <p>Loram ipsum dollar amet,consectetuer adipiscing</p>
+        <div class="row d-flex justify-content-around">
+			
+			
+			<div class="col-2 box" *ngFor="let slide of rows;let i = index" >
+				
+					<div class="card-img" >
+						<img (click)="nav(slide.thumbnail_label)" src={{slide.thumbnail}} alt="description image" class="img-fluid">
+					</div>
+						
+					<div class="card-body divlineheight">
+						<span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+						<h4>{{slide.thumbnail_label}}</h4>
+						<p>PRICE:${{slide.price}}</p>
+
+                        <div class="container" >
+							<div class="row d-flex justify-content-center align-items-center" >
+							   
+							   <div (mouseover)="active = i" (mouseout)="active = '' " class="class-icon d-flex justify-content-center align-items-center" [ngClass]="active === i ? 'myCssClass' : '' " >
+								  <i  class="fa fa-heart" aria-hidden="true"></i>
+							   </div>
+								<div (mouseover)="active = i" (mouseout)="active = '' " (click)="adduser(slide.thumbnail_label,slide.price,slide.thumbnail)" class="aa class-addtocart d-flex justify-content-center align-items-center">
+								   <p>add to cart</p>
+								</div>
+								<div (mouseover)="active = i" (mouseout)="active = '' " (click)="showquickview()" class="class-icon d-flex justify-content-center align-items-center" [ngClass]="active === i ? 'myCssClass' : '' ">
+								  <i  class="fa fa-eye" aria-hidden="true"></i>
+							   </div>  
+								 
+							</div>
+						 </div>
+
+					</div>
+
+        	</div>
+       	</div>
+    </div>
+</section>
+<div class="search-content "  style="display: none;">
+	<span class="closebtn" (click)="closeSearch()" title="Close Overlay">×</span>
+	<div class="container d-flex justify-content-start align-items-center" style="height: 100%;">
+	   <!-- <app-productdetails-quickview></app-productdetails-quickview> -->
+	</div>
+  </div>
+ 

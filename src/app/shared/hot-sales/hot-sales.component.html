@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-12 hot-sales">
+          <p>HOT SALES</p>
+            <a href="" *ngFor="let slide of rows">
+              <div class="row d-flex">
+                  <div class="col-4 div-img">
+                      <img  src={{slide.thumbnail}} alt="gallery" class="img-fluid"> 
+                  </div>
+                  <div class="col-8 div-head">
+                        <div class="d-flex">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <h4>{{slide.thumbnail_label}}</h4>
+                        <p>{{slide.price}}</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+  </div>
+  
+  </div>

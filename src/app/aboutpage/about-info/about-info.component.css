@@ -1,0 +1,112 @@
+.toggle h3 a{
+  color:#000;
+  text-decoration:none;
+}
+.toggle h3{ 
+  background: #f3f3f3;
+  font-weight: bold;
+  font-size: 0.8vw;
+  cursor:pointer;
+  margin-bottom:0px;
+  width: 100%;
+  transition: 0.4s;
+  display: flex;
+  justify-content:flex-start;
+  height: 3.3vw;
+}
+.toggle h3 img {
+  margin: 0;
+  padding: .8vw .8vw .8vw .8vw;
+  background-color: white;
+  width: 3vw;
+  height: 100%;
+}
+.toggle h3 a{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: .5vw;
+}    
+.plus{
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 1.2vw;
+  color: #DDDDDD;
+  font-size: .9vw;
+  border-radius: 100%;
+  padding: auto;
+  height: 1vw;
+  align-self: right;
+  margin-left: auto;
+  margin-right: .8vw;
+  text-align: center;
+}
+
+.toggle >div {padding: 0.5vw 0.7vw;font-size:16px;border-top: 0px;display: none;background-color: #fff!important;box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);-o-box-shadow: 0 1px 2px rgba(0,0,0,0.2);transition: height .35s ease-in-out;}
+.wpb_wrapper{
+	height: 15.2vw;
+}
+.wpb_wrapper p{
+  font-size: 0.75vw;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+.info1{
+  text-align: center;
+}
+.info1 h2{
+  font-size: 1.09vw;
+  font-family:'Lato';
+  color: rgba(51,51,51,255);
+  white-space: nowrap;
+  font-weight: bold;
+}
+.info1 p{
+  color: rgba(76,76,76,255);
+  font-size: 0.85vw;
+  
+  text-align: center;
+  margin-top: 1vw;
+  margin-bottom: 2vw;
+}
+.left-div h1{
+  font-size: 1.3vw;
+  color: #EEEDED;
+}
+.left-div .top-left {
+  position: absolute;
+  top: .5vw;
+  left: 3vw;
+}
+.left-div .bottom-right {
+  position: absolute;
+  bottom: .5vw;
+  right: 3vw;
+  text-align: center;
+}
+.left-div img{
+  margin-bottom: .8vw;
+}
+.left-div .bottom-right h3{
+   font-size: 1vw;
+   color: #FFFFFF;
+   margin-bottom: 0px;
+}
+.left-div .bottom-right p{
+   font-size: 1vw;
+   color: #FFFFFF;
+   margin-top: 1px;
+   margin-bottom: 1vw;
+}
+.bottom-left {
+  position: absolute;
+  bottom: .5vw;
+  left: 2vw;
+}
+.left-div .bottom-left p{
+  font-size: .7vw;
+  color: #FFFFFF;
+  margin-bottom: 1vw;
+}

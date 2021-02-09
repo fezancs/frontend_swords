@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <div class="row justify-content-center align-self-center">
+    
+    
+      <div class="container-fluid d-flex flex-column justify-content-center align-items-left pt-3 pb-3 pr-3 pl-3" style="background-color:  #f3f3f3;">
+         <h1>My Wishlist</h1>
+         
+         <!--cart heading-->
+         <div class="row d-flex justify-content-around align-items-left mt-3">
+           
+           <div class="col-sm-1 col-lg-1 justify-content-center align-self-center">
+             
+           </div>
+         
+           <div class="col-sm-12 col-lg-4 justify-content-center align-self-center">
+             <h6 class="product-heading">PRODUCT NAME</h6>
+           </div>
+         
+           <div class="col-sm-12 col-lg-1 justify-content-center align-self-center">
+             <p class="product-heading">UNIT PRICE</p>
+           </div>
+         
+           <div class="col-sm-12 col-lg-4 justify-content-center align-self-center">
+             <p class="product-heading">QUANTITY</p>
+           </div>
+ 
+          <div class="col-sm-12 col-lg-1 justify-content-center align-self-center"> 
+             <p class="product-heading">SUBTOTAL</p>
+          </div>
+        </div>
+         
+         
+        <!--cart items--> 
+         <div class="row d-flex justify-content-around align-items-left mt-3" *ngFor="let u of wishlistitems">
+           
+           <div class="col-sm-12 col-lg-1 d-flex align-items-center  justify-content-center">
+             <img src={{u.image}} class="img-fluid cart-img"/>
+              <div class="col-1 justify-content-center align-items-center cart-cancelbtndiv">
+                <button (click)="removeitem(u.name)" class="cart-cancelbtn" >x</button>
+              </div>
+            </div>
+         
+           <div class="col-sm-12 col-lg-4 justify-content-center align-self-center">
+             <h6 class="product-detail">{{u.name}}</h6>
+           </div>
+         
+           <div class="col-sm-12 col-lg-1 justify-content-center align-self-center">
+             <p class="product-detail">${{u.price}}</p>
+           </div>
+         
+           <div class="col-sm-12 col-lg-4 ">
+             <div class="spinner-input d-flex justify-content-center align-self-center align-items-center" >
+                <div style="display: flex;">
+                   <input type="text" class="num" value={{u.quantity}}>
+                   <div (click)="dec(u)" class="minus cursor_hover">&#45;</div>
+                   <div (click)="inc(u)" class="plus cursor_hover">&#43;</div>
+                 </div>
+             </div>
+           </div>
+ 
+          <div class="col-sm-12 col-lg-1 justify-content-center align-self-center"> 
+             <p class="product-detail">${{u.price * u.quantity}}</p>
+          </div>
+       </div>
+       <button class="checkout-btn" routerLink="/shoppage">Shop</button>
+     </div>
+  
+ 
+ </div>
+ </div>

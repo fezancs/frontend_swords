@@ -1,0 +1,15 @@
+<div class="container-fluid ">
+	<div class="row">
+		<div class="col-12">
+			<div class="slider-head">
+			  FILTER BY PRICE 
+			 </div>
+			 <div class="range-slider divlineheight" >
+			 	<ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+			 </div>
+			 <div class="slider-footer" (click)="updatesearchresult()">
+			 	UPDATESEARCHRESULT
+			 </div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,108 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+@media only screen and (max-width: 800px) {
+  table{
+    line-height: .2;
+  }
+}
+hr{
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+.payment{
+  padding-top: 4vw;
+  padding-bottom: 3vw;
+}
+.payment h1{
+  font-size: 1.25vw;  
+  font-weight: bold;
+  font-family: 'Lato';
+  color: rgba(51,51,51,255);
+}
+.payment h3{
+  font-size: 1vw; 
+  font-family: 'Lato';
+  font-weight: bold;
+  color: rgba(69,69,69,255);
+}
+.payment p{
+  font-size: 0.7vw;
+  color: rgba(148,148,148,255);  
+}
+.payment p:nth-child(2){
+  font-size: 0.7vw;
+  color: black;
+  font-weight:bold;  
+}
+.payment button {
+  border:1px solid #a81000;
+  background:#a81000;
+  color:rgba(255,255,255,255);
+  font-weight: bold;
+  font-size: 1.22vw;
+  margin-bottom: 2vw;
+  font-weight: bold;
+  padding: .2vw .7vw;
+}
+.order h3{
+  font-size: 0.7vw;
+  font-weight: bold;
+  font-family: 'Lato';
+  color: rgba(51,51,51,255);
+}
+table p ,table label{
+  font-size: 0.7vw;
+  font-family: 'Lato';
+  color: rgba(128,128,128,255);
+}
+table h3{
+  font-size: 1vw;
+  font-weight: bold;
+  font-family: 'Lato';
+  color: rgba(69,69,69,255);
+}
+table h1{
+  font-size: 1.6vw;
+  font-family: 'Lato';
+  color: rgba(69,69,69,255);
+}
+th, td {
+  padding-left: 10vw;
+  text-align: left;
+}
+label{
+  font-size: 0.7vw;
+  font-weight: bold;
+  font-family: 'Lato';
+  color: rgba(51,51,51,255);
+}
+input[type=checkbox] {
+  width: .7vw;
+  height: .7vw;
+  border: 5px solid  #DDDDDD;
+
+}
+/*input[type="checkbox"]:checked {
+  box-shadow: 0 0 0 3px hotpink;
+  background-color: white;
+  color: white;
+}
+*/
+span{ display:block; width:90%; float:left; height:5px;}
+span:nth-child(1){
+  width: 10%;
+}
+.line{
+    width:100%;
+    margin-bottom: 1.4vw;
+}
+.color-1{
+    background:#a81000;
+    height: 0.2vh;
+}
+.color-2{
+    background:#DDDDDD;
+    height: 0.05vh;
+}

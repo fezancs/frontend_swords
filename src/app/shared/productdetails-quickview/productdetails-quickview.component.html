@@ -1,0 +1,119 @@
+
+<div class="container" style="margin-bottom: 10vh;margin-top: 6vh ;padding-right: 3vw;padding-left: 3vw;">
+    <div class="row">
+      <!--gallery column-->
+      <div class="col-5 div1" style="height:20vw;">
+         <div class="gallery d-flex">
+           <div class="col-2">
+              <div id="slideshow" class="gallery-smallimg d-flex flex-column">
+                <button class="prev"> pre </button>
+                 <div *ngFor="let slide of slideData">
+                     <a >
+                       <figure>
+                         <img src={{slide.image}} data-index="3" alt="">
+                       </figure>
+                     </a>
+                 </div>
+                 <button  class="next">  next </button>
+              </div>
+           </div>
+           <div class="col-10 gallery-largeimg">
+             <img id="displayed-img" alt='' class="img-fluid" src="assets/images/productdetails.png" style="height:20vw;width: 100% ">
+           </div>
+         </div>
+      </div>
+      <!--gallery column ended-->
+      <!--second column-->
+      <div class="col-4" style="height: 20vw;">
+         <div class="product-details">
+             <!--div1-->
+             <div class="product-details-header">
+                 <p>ELEGENT WATCHES</p>
+                 <h2 class="product-name"> HARRY POTOR SWORD</h2>
+             </div>
+             <!--div2-->
+             <div class="rating">
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star"></span>
+                 <span class="fa fa-star"></span>
+                 <p>REVIEWS</p>
+             </div>
+             <!--div3-->
+             <div class="reviews">
+                 <button data-toggle="modal" data-target="#mymodal">WRITE REVIEW</button>
+                     <div class="modal" id="mymodal">
+                         <div class="modal-dialog">
+                             <div class="modal-content">
+                                 <div class="modal-header">
+                                     <h4>WRITE REVIEW</h4>
+                                     <button type="button" class="close" data-dismiss="modal"> &times;</button>
+                                 </div>
+                                 <div class="modal-body">
+                                   <form>
+                                     <input type="text" name="modal-input">
+                                     <button>done</button>
+                                   </form>
+                                 </div>
+                               </div>
+                           </div>
+                       </div>
+                 <button> <i class="far fa-heart" style="margin-right: .2vw"></i>ADD TO WISTLIST</button>
+             </div>
+             <!--div4-->
+             <div class="product-description">
+                 <p>Loram ipsum dollar amet,consectetuer adipiscing elit,sed diam nonummy nibh evismod tincidunt ut loareet dolare magna aliqquam erat volupot</p>
+                     <div>
+                         <ul class="columns" data-columns="2">
+                             <li  style="font-size: .7vw"><i class="fa fa-check" aria-hidden="true"></i>PURE PLATINUM</li>
+                             <li style="font-size: .7vw"><i class="fa fa-check" aria-hidden="true"></i>GOLD</li>
+                             <li style="font-size: .7vw"><i class="fa fa-check" aria-hidden="true"></i>PRECIOUSSTONE</li>
+                             <li style="font-size: .7vw"><i class="fa fa-check" aria-hidden="true"></i>STAINLESSSTEEL</li>
+                             <li style="font-size: .7vw"><i class="fa fa-check" aria-hidden="true"></i>CHERACOM</li>
+                             <li style="font-size: .7vw"><i class="fa fa-check" aria-hidden="true"></i>ROLESOR</li>
+                             <li style="font-size: .7vw"><i class="fa fa-check" aria-hidden="true"></i>STAINLESSSTEEL</li>
+                             <li style="font-size: .7vw"><i class="fa fa-check" aria-hidden="true"></i>PURE PLATINUM</li>
+                             <li style="font-size: .7vw"><i class="fa fa-check" aria-hidden="true"></i>CHERACOM</li>
+                             <li style="font-size: .7vw"><i class="fa fa-check" aria-hidden="true"></i>ROLESOR</li>
+                         </ul>
+                       </div>
+               </div>
+             </div>
+        </div>
+      <!--second column ended-->
+     <!--third column-->
+     <div class="col-3" style="height:20vw;background-color: white;">
+        <div class="cart div">
+                 <h3>AVAILABILITY : <span>INSTOCK</span></h3>
+                 <hr/>
+                 <p> <del>$125.00</del>  <small style="margin-left: .5vw;">you saved <span>$25</span> </small> </p>
+                 <h1 class="product-price" type="text" >100.00</h1>
+                 <label for="spinner-input" class="spinner__label">Quantity </label>
+                     <div id="spinner-input" style="width: 100%;display: flex;">
+                  <div style="display: flex; width: 100%;">
+                   <input type="text"  value="1"> <!--id="num2"-->
+                   <div class="minus cursor_hover">&#45;</div>
+                   <div class="plus cursor_hover">&#43;</div>
+                 </div>
+               </div>
+                   
+                 <label for="sharpen">Sharpen:</label>
+                     <br>
+                     <select name="sharpen" id="cars" class="select-btn">
+                         <option value="yes">YES</option>
+                         <option value="no">NO</option>
+                     </select>
+                     <br>
+                     <button (click)="adduser()" class="buynow">BUY IT NOW</button>
+             </div>
+ 
+     </div>
+     <!--third column ended-->
+    </div>
+ </div>
+ 
+ 
+ 
+ 
+ 

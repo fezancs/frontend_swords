@@ -1,0 +1,482 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.welcomediv p{
+  font-family: "Lato";
+  font-size: .9vw;
+  color: rgba(125,125,125,255);
+  margin-right: 2vw;
+  margin-top: .15vw;
+}
+hr{
+  width: 100%;
+  color: black;
+  margin-top: .05vw;
+  margin-bottom: 0vw;
+}
+.trending{
+  border: .02vw solid #E9E9E9;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 1vw;
+  padding: .5vw;
+}
+.trending h3 {
+  font-family: "Lato";
+  font-size: 2vw;
+  color:  #a81000;
+}
+h4{
+  font-family: "Lato";
+  font-size: 1.2vw;
+  color:  #a81000;
+  left: 1vw;
+  position: absolute;
+}
+.swiper-button-prev-trending , .swiper-button-next-trending{
+  width: 1.5vw;
+  height: 1.7vw;
+  font-size: 1vw;
+  text-align: center;
+  border: none;
+  margin: .1vw 0vw;
+}
+.org-btn{
+  margin-left: 6vw;
+  background-color: #a81000;
+  color: white;
+  width: 13vw;
+  height: inherit;
+  border: none;
+  font-size: .7vw;
+  font-weight: bold;
+  display: block;
+}
+.org-btn:hover{
+  color: black;
+}
+.inputfield{
+  display: block;
+  width: 75%;
+  font-family: "Lato";
+  font-size: 1vw;
+  color: rgba(125,125,125,255);
+  margin-right: 0vw;
+  height: 100%;
+  outline: none;
+  background-color: white;
+  border: .1vw solid #a81000;
+}
+form{
+  height: 100%;
+}
+.search-content1{
+  display: none;
+}
+.search-content1 button{
+  font-family: "Lato";
+  font-size: 1vw;
+  color: white;
+  margin-right: 0vw;
+  height: 100%;
+  width: 25%;
+  outline: none;
+  background-color:#a81000;
+  padding: 0vw .7vw;
+  border: .1vw solid #a81000;
+  margin-top: 0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .nav-2 {
+    margin-bottom: 0vw;  
+  }
+  .head{
+    line-height: 1;
+  }
+}
+.swiper-wrapper img{
+  width: 100%;
+}
+.swiper-slide{
+  width: 100%;
+}
+#header-box{
+  width: 100%;
+  position:absolute;
+  top: 0vw;
+  left:auto;
+  right:auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: .5vw 2vw .5vw 2vw;
+  display: block;
+  
+}
+
+
+.openBtn:hover {
+  background: #bbb;
+}
+.overlay {
+  height: 10%;
+  width: 35%;
+  display: none;
+  position: absolute;
+  z-index: 10;  
+  margin-top: 0;
+  right:0%;
+  background-color: transparent;
+}
+
+.overlay-content {
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+}
+
+.overlay .closebtn:hover {
+  color: #a81000;
+}
+
+.overlay input[type=text] {
+  padding: .5vw;
+  font-size: 1vw;
+  border: none;
+  float: left;
+  width: 20vw;
+  height: 3vw;
+  background: white;
+  margin-top: 1vw;
+}
+
+.overlay input[type=text]:hover {
+  background: #f1f1f1;
+}
+
+.overlay button {
+  float: left;
+  width: 5vw;
+  height: 3vw;
+  padding: auto;
+  background: #a81000;
+  font-size: 1vw;
+  border: none;
+  cursor: pointer;
+  margin-top: 1vw;
+}
+
+.overlay button:hover {
+  background: #bbb;
+}
+
+
+
+
+           /**************************NAV 1*****************/
+
+
+#nav-1{
+  display: flex;
+  justify-content:space-around;
+  padding-top: .8vw;
+  padding-bottom: .8vw;
+}
+#nav1-left{
+  display: flex;
+  line-height: 0;
+}
+
+#nav1-right{
+ display: flex;
+}
+a{
+  font-size: .65vw;
+  margin-right: 1vw;
+  color: white;
+  font-size: bold;
+}
+i,p{
+  font-size: .8vw;
+   color: white;
+  font-size: bold;
+}
+.dropbtn {
+  background-color: transparent;
+  color: rgba(255,255,255,255);
+  font-size: 0.65vw;
+  border: none;
+  font-family:'Lato' ;
+  margin-right: 2vw;
+}
+.dropbtn a{
+   color: white;
+  font-size: 1vw; 
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown i{
+  font-size: .5vw; 
+  margin-left: .2vw;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  z-index: 1;
+  font-size: 1vw;
+  min-width: 7vw;
+}
+
+.dropdown-content a { 
+background-color: #E9E9E9;
+color: black;
+padding: .5vw .5vw;
+text-decoration: none;
+display: block;
+width: 100%;
+}
+.div-inline{
+  display: inline;
+}
+.dropdown-content a:hover {background-color: rgba(255,187,0,255);}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+           /**************************NAV 1 ended*****************/
+             /**************************NAV 2*****************/
+.nav-2{
+  background-color: white;
+  margin-top: .5vw;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nav-2 a{
+  font-size: 0.874998vw;
+  padding: .8vw 1.5vw;
+  color: black;
+  font-weight: bold;
+  margin-right: 3vw;
+}
+.nav-2 a:hover{
+  text-decoration: none;
+  color: #a81000;
+}
+.org-btn{
+  margin-left: 6vw;
+  background-color: #a81000;
+  color: white;
+  width: 13vw;
+  height: inherit;
+  border: none;
+  font-size: .7vw;
+  font-weight: bold;
+  cursor: pointer;
+}
+.org-btn:hover{
+  color: black;
+}
+
+
+
+
+          /**************************NAV 2 ended*****************/
+
+
+           /**************************box styling*****************/
+#top{ 
+  border-top: .2vw solid white;
+  border-left: .2vw solid white;
+  border-right: .2vw solid white;
+  border-bottom: none;
+  width: 20vw;
+  height: 3vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4vw;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  background-color: transparent;
+}
+ #trends{
+  text-align: center;
+  white-space: nowrap;
+  font-size: 4vw;
+  margin: 0;
+  padding: 0;
+  color: rgba(255,255,255,255);
+  font-family:'Lato' ;
+}
+#trends-p{
+ text-align: center;
+ white-space: nowrap;
+  font-size: 0.89vw;
+  margin: 0;
+  padding: 0;
+  color: rgba(255,255,255,255);
+  font-family:'Lato' ; 
+}
+span{
+  color: #a81000;
+}
+legend{
+  font-size: 0.7vw;
+  width: auto;
+  padding: .4vw;
+  color: rgba(255,255,255,255);
+  font-family:'Lato' ;
+}
+#bottom{
+  border-top: none;
+  border-left: .2vw solid white;
+  border-right: .2vw solid white;
+  border-bottom: .2vw solid white;
+  width: 20vw;
+  height: 4vw;
+  margin-left: auto;
+  margin-right: auto; 
+  background-color: transparent;
+}
+#discover{
+  background-color: transparent;
+  border-radius: 2vw;
+  border: 2px solid white;
+  padding: .2vw 2vw;
+  color: rgba(255,255,255,255);
+  font-size: 0.8vw;
+  font-family:'Lato' ;
+  margin-top: 3vw;
+  outline: none;
+}
+#discover:hover{
+  text-decoration: none;
+  outline: none;
+  background-color:white;
+  color: black;
+}
+                 /**************************box styling ended*****************/
+
+
+
+.cart{
+ width: 20vw;
+ right: 10%;
+ position: absolute;
+ display: none;
+ z-index: 2;
+ background-color: #E9E9E9;
+ border-radius: .7vw;
+ padding: 1vw .5vw 1vw .5vw ;
+}
+.cartdiv{
+  background-color: white;
+  width: 100%;
+  display: none;
+}
+.cartempty{
+  background-color: white;
+  width: 100%;
+  display: none;
+}
+.cartempty h2{
+  color: black;
+  font-size: 1vw;
+  font-family: 'Lato';
+  font-weight: bold;
+  padding: 1vw;
+}
+.cart-img{
+  width: 100%;
+  height: 4vw;
+}
+.cart-productname{
+  color: black;
+  font-size: 1vw;
+  font-family: 'Lato';
+  font-weight: bold;
+}
+.cart-productdetail{
+  color: black;
+  font-size: .8vw;
+  font-family: 'Lato'; 
+}                
+.cart-btn{
+  width: 100%;
+  color: white;
+  background-color:#a81000 ;
+  font-size: .8vw;
+  font-family: 'Lato';
+  font-weight: bold;
+  padding: .2vw;
+  margin-top: .3vw;
+  border: none;
+  outline: none;
+}
+.cart-btn:hover{
+  color:#a81000;
+  background-color: white;
+}
+.cart-cancelbtn{
+  color: black;
+  font-size: .8vw;
+  font-family: 'Lato'; 
+  background-color: white;
+  margin-right: .6vw;
+  outline: none;
+  border: white;
+}
+.cart-cancelbtn:hover{
+  color:#a81000;
+}
+.div1{
+  width: 100%;
+  z-index: 1;
+  top: 0%;
+  left:0%;
+  position: absolute;
+  display: block;
+}
+.animated-div{
+  margin-left: -7vw;
+  background-color: blue;
+  width: 10VW;
+  padding: .5vw;
+  border-bottom-right-radius: .8vw;
+  border-top-right-radius: .8vw;
+  transition: 0.3s;
+  margin-bottom: .3vw;
+}
+.animated-div:hover{
+  margin-left: 0vw;
+}
+.animated-div h5{
+  font-size: 1vw;
+  padding:.5vw;
+  color: white;
+}
+.animated-div i{
+  font-size: 1.3vw;
+  padding:.5vw;
+}

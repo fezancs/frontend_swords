@@ -1,0 +1,53 @@
+*{
+   padding: 0px;
+   margin: 0px;
+   line-height: 0;
+}
+p{
+   line-height: 1;
+}
+.about-setra p , .info p{
+   font-family:'Lato' ;
+   font-size: 0.85vw;
+   color: rgba(76,76,76,255);  
+   text-align: center;
+   margin-top: .3vw;
+}
+.about-setra p:nth-child(1){
+   text-align: left;
+}
+.about-setra h1{
+   font-family:'Lato' ;
+   font-size: 2vw;
+   color: black;  
+   text-align: center;
+   margin-top: 2vw;
+}
+.about-setra h2 , .info h2{
+   font-family:'Lato' ;
+   font-size: 1.09vw;
+   font-weight: bold;
+   color: rgba(51,51,51,255);  
+   text-align: center;
+   margin-top: .5vw;
+}
+.about-setra h3{
+   font-family:'Lato' ;
+   font-size: 0.75vw;
+   font-weight: bold;
+   color: rgba(51,51,51,255);  
+   text-align: center;
+   margin-top: 3vw;
+}
+.about-setra span{
+	color: #a81000;
+}
+.about-setra figure{
+   text-align: center;
+   padding: 0;
+}
+figcaption p span{
+  font-size: 0.6vw;
+  font-family:'Lato' ;
+  color: rgba(255,188,0,255);
+}

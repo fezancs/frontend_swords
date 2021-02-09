@@ -1,0 +1,46 @@
+<div class="container-fluid info" style="background-color: #E9E9E9">
+  <div class="row d-flex flex-column justify-content-center align-items-center">
+     <div class="col-8">
+         
+        <swiper [config]="config">
+            <div class=" car-head">
+                <h1>PROFESSIONAL TEAM</h1>
+                <div class="d-flex justify-content-between">
+                <p>Loram ipsum dollar amet,consectetuer adipiscing elit,</p>
+                <div style="text-align: right;margin-bottom: .5vw;">
+                    <button class="swiper-button-prev-unique"> < </button>
+                    <button class="swiper-button-next-unique"> > </button>
+                </div>
+                </div>
+            </div>
+            <div class="swiper-wrapper" style="background-color: #E9E9E9">
+                <div class="swiper-slide" *ngFor="let slide of slideData" style="padding: 1vw;">
+                    <div class="card1">
+                        <div class="card-img-top card-img-top-250">
+                            <img src="assets/images/card3.png"  class="img-fluid" />
+                        </div>
+                        <div class="card-block py-2">
+                            <div class="card-header1"><h3>{{slide.name}}</h3></div>
+                            <div class="card-text1">marketing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </swiper>
+
+     </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

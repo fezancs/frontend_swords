@@ -1,0 +1,239 @@
+<div class="container-fluid" >
+
+  <!--trending slider-->
+  <div class="row">
+    <div class="col-12 d-flex justify-content-end welcomediv">
+        
+        <h4>TRENDING</h4>
+        
+        <div style="width:45%;padding: 0;left: 9%;position: absolute;">
+          <swiper [config]="config1">
+            <div class="swiper-wrapper" style="background-color: #E9E9E9;">
+              <div class="swiper-slide" style="background-color: white;" *ngFor="let slide1 of trendingnews">
+                 <p>{{slide1.news}}</p>
+              </div>
+            </div>
+          </swiper>      
+        </div>
+        <div class="d-flex" style="margin-right: .5vw;">
+            <button class="swiper-button-prev-trending"> < </button>
+            <button class="swiper-button-next-trending"> > </button>
+        </div>
+         
+    </div>
+  </div>
+  
+  <!--trending slider end-->
+  
+  <!--logo-->
+  <div class="row flex-column" style="background-color: black;">
+    <div class="col-12" (click)="active = 0" >
+      <!--nav3-->
+      <div class="nav-3">   
+        <div style="width: 100%;">
+          <img class="logox" src="assets/images/logoX.png" style="width: 100%;height:8vw ;" class="img-fluid" />
+        </div>
+        <div class="col-12 d-flex justify-content-center align-items-center">
+           <div class="wrap1 d-flex justify-content-center align-items-center" >
+            <img src="assets/images/shine.png" class="img-fluid" />
+           </div>
+        </div>   
+        <!-- <img src="assets/images/logo6.webp" alt="logo" class="img-fluid" style="height: 100%;width: 100%;"> -->
+            <!--dropdowns-->
+            <div class="d-flex justify-content-around" style="margin-bottom: 1vw;margin-top: -3vw;margin-left: -2vw;">
+               <div class="d-flex" >
+                  <!-- <div class="dropdown" style="padding-right: 1vw;margin-left: -5.5vw;" >
+                      <button class="dropbtn d-flex justify-content-center align-items-center"> {{language}} <i class="fa fa-chevron-down"></i></button>
+                      <div class="dropdown-content">
+                          <a (click)="language = 'ENGLISH' ">ENGLISH</a>
+                          <a (click)="language = 'SPANISH'" >SPANISH</a>
+                          <a (click)="language = 'FRENCH' ">FRENCH</a>
+                      </div>
+                  </div> -->
+                  <div class="dropdown">
+                       <button class="dropbtn d-flex justify-content-center align-items-center">CURRENCY::{{currency}}<i class="fa fa-chevron-down"></i></button>
+                       <div class="dropdown-content">
+                          <a (click)="currency = 'Pound' ">Pound (£)</a>
+                          <a (click)="currency = 'Euro' " >Euro (€)</a>
+                          <a (click)="currency = 'Dollar' ">($) Dollar</a>
+                        </div>
+                  </div>
+                </div>
+                <!--dropdowns end-->
+                <!--icons-->
+                <div class="d-flex">
+                    <i (click)="showcart()" class="fa fa-shopping-bag" style="color: white; border-right: 1px solid white;padding: .5vw 1vw;margin-bottom: 1vw;font-size: 1.1vw;"> </i>     
+                    <i routerLink="/wishlistpage" class="fa fas fa-heart" style="color: white; border-right: 1px solid white;padding: .5vw 1vw;margin-bottom: 1vw;font-size: 1.1vw;"></i> 
+                    <i routerLink="/clientauth"  class=" fa fas fa-user"  style="color: white; padding: .5vw 1vw;margin-bottom: 1vw;font-size: 1.1vw;"></i>
+           
+                    <!--cart-->
+                    <div id="mycart"class="cart"  >
+                        <!--empty cart msg-->
+                        <div class="justify-content-center align-items-center cartempty mt-2"> 
+                            <h2>YOUR CART IS EMPTY</h2>
+                        </div>
+                        <!--empty cart msg ended-->
+
+                        <!--cart items-->
+                        <div class="justify-content-center align-items-center cartdiv " >
+                            <div style="width: 20vw; " class="d-flex flex-column justify-content-start align-items-start " style="border: 2px solid #E9E9E9;">              
+                                <div class="d-flex justify-content-start align-items-center cartdiv mt-2" *ngFor="let u of cartitems">
+                                     <div style="width: 20%;">
+                                        <img class=" img-fluid cart-img" src={{u.image}}/>
+                                      </div>
+                                      <div class="justify-content-center align-items-center pl-2" style="width: 80%;">
+                                          <h4 class="cart-productname">{{u.name}}</h4>
+                                          <p class="cart-productdetail">{{u.quantity}} x ${{u.price}}</p>
+                                      </div>
+                                      <div class="justify-content-center align-items-center">
+                                           <button (click)="removeitem(u.name)" class="cart-cancelbtn" >x</button>
+                                      </div>
+                                </div>
+                            </div>
+                            <button (click)="closecart()" routerLink="/cartpage" class="cart-btn">UPDATE CART</button>
+                            <button (click)="closecart()" routerLink="/placeorderpage" class="cart-btn">CHECKOUT</button>
+                        </div> 
+                        <!--cart items ended-->
+                 </div>
+                 <!--cart ended-->
+              <!--icons ended-->          
+            </div>
+        </div>
+      </div>   
+      <!--nav3 ended-->    
+
+    </div>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+      <!--nav2-->
+      <div class="nav-2 d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+          <a href="" > HOME </a>
+          <a href="" [routerLink]="['/shoppage', 'sword']"> SWORDS </a>
+          <a href="" [routerLink]="['/shoppage', 'axe']"> AXES </a>
+          <a href="" [routerLink]="['/shoppage', 'knife']"> KNIVES </a>
+          <a href="" routerLink="/shoppage"> OURSHOP </a>
+          <a href=""> BLOG </a> 
+          <a href="" routerLink="/aboutpage"> CONTACT </a>
+        </div>
+        <form action="" class="d-flex flex-column">
+          <div class="d-flex">
+            <input class="inputfield"  type="text" placeholder="Search.." name="search" (click)="active = 1" (input)="onSearchChange($event.target.value)">
+            <button class="org-btn" (click)="search()" type="button"> SEARCH <i class="fa fa-search" aria-hidden="true"></i> </button>
+          </div>
+          <div  class="popularsearch" [ngClass]="active === 1 ? 'myCssClass' : '' ">
+
+            <div class="container-fluid" *ngIf="filteredProducts?.length > 0">
+              <div class="row" style="padding: 0 1vw;margin: 0;line-height: 1vw">
+                <div class="col-12 hot-sales">
+                    <div class="d-flex justify-content-between">
+                      <p>Suggestions</p>
+                      <div class="d-flex">
+                        <i (click)="showless()" class="fa fa-caret-left popularicon" aria-hidden="true" style="margin-right: .2vw;"></i>
+                        <i (click)="showmore()" class="fa fa-caret-right popularicon" aria-hidden="true"></i>    
+                      </div>
+                    </div>
+                      <a  [routerLink]="['/productdetailspage', slide.thumbnail_label]" *ngFor="let slide of newfilteredProducts" style=" padding-bottom: 0;padding-top: 0; background-color: violet;">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="col-3 div-img ">
+                                <img  src={{slide.thumbnail}} alt="gallery" class="img-fluid"> 
+                            </div>
+                            <div class="col-8 div-head d-flex flex-column justify-content-center">
+                                   <div class="starrating">
+                                    <ngb-rating  [max]="5" [(rate)]=slide.rating [readonly]="true"></ngb-rating>
+                                   </div> 
+                                  <h4>{{slide.thumbnail_label}}</h4>
+                                  <p *ngIf="slide.sale=='no'" > {{slide.price | currency}}</p>
+                                  <p *ngIf="slide.sale=='yes' "> <del> {{slide.price | currency}} </del> <b> {{slide.price-((slide.sale_percent/100)*slide.price) | currency}} </b></p>
+                       
+                            </div>
+                        </div>
+                        <hr/>
+                    </a>
+                </div>
+            </div>
+            
+            </div>
+
+            <div class="d-flex" *ngIf="filteredProducts?.length == 0">
+             <div class="popularsearchleft d-flex flex-column">
+               <h1>POPULAR SEARCHES</h1>  
+               <p *ngFor="let popular of popularsearch">{{popular.name}}</p>
+             </div>
+             <div class="popularsearchright d-flex flex-column">
+              <h1>TRENDING PRODUCTS</h1>
+              <div class=" d-flex">
+                <div class="imgbox d-flex flex-column" *ngIf="trendingproducts[0]">
+                  <img src={{trendingproducts[0].thumbnail}} alt="logo" class="img-fluid">
+                  <p> {{trendingproducts[0].short_description}} </p>
+                </div>
+                <div class="imgbox d-flex flex-column" *ngIf="trendingproducts[1]">
+                  <img src={{trendingproducts[1].thumbnail}} alt="logo" class="img-fluid">
+                  <p> {{trendingproducts[1].short_description}} </p>
+                </div>
+              </div>  
+            </div>
+            </div>
+         </div>
+          
+        </form>
+      </div>      
+      <!--nav 2 ended-->
+    </div>
+  </div>
+  <!--logo-->
+
+
+  <div class="row">
+    <div class="col-12" (click)="active = 0" >
+        <!-- <div class="div1 d-flex flex-column justify-content-center align-items-center" style="z-index: 8;">
+        <h1 id="trends">TREND SWORD <span>2021</span></h1>
+        <p id="trends-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut<br> laoreet dolore magna aliquam erat volutpat.</p>
+       </div>  -->
+       
+       <swiper [config]="config" style="z-index: 7;" style="position: relative;">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let slide of slideData1" style="height: 26.5vw">
+                   <img src={{slide.imagepath}}  class="img-fluid" style="height: 100%;width: 100%;"/>
+                   <div class="div1 d-flex flex-column justify-content-center align-items-center" style="z-index: 8;">
+                    <h1 id="trends">{{slide.title}} <span>{{slide.orgtitle}}</span></h1>
+                    <p id="trends-p">{{slide.subtitle}}</p>
+                   </div>                   
+            </div> 
+        </div>
+      </swiper>
+      
+    </div>
+  </div>
+      
+  
+</div>
+
+
+
+
+
+
+ 
+ 
+ <div class="d-flex justify-content-start align-items-center " style="height: 100%;z-index: 50;position: fixed;top: 0;left: 0;background-color: transparent;">
+   <div class="d-flex flex-column">
+     <div class="animated-div d-flex  justify-content-between align-items-center" >
+       <h5>Facebook</h5>
+       <i class="fa fa-facebook" aria-hidden="true"></i>
+     </div>
+     <div class="animated-div d-flex justify-content-between align-items-center" style="background-color:brown;" >
+       <h5>Pinterest</h5>
+       <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+     </div>
+     <div class="animated-div d-flex justify-content-between align-items-center" style="background-color:lightskyblue;" >
+       <h5 >Twitter</h5>
+       <i class="fa fa-twitter" aria-hidden="true"></i>
+     </div>
+     <div class="animated-div d-flex justify-content-between align-items-center" style="background-color:gray;">
+       <h5>Behance</h5>
+       <i class="fa fa-behance" aria-hidden="true"></i>
+     </div>
+   </div>
+ </div>
+ 
+ 

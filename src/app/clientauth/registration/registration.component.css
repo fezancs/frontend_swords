@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  .auth{
+    padding-top: 4vw;
+    padding-bottom: 3vw;
+  }
+  .auth h1{
+    font-size: 1.25vw;  
+    font-family: 'Lato';
+    color: rgba(51,51,51,255);
+  }
+  hr{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+  }
+span{ display:block; width:90%; float:left; height:5px;}
+span:nth-child(1){
+  width: 10%;
+}
+  .line{
+    width:100%;
+    margin-bottom: 1.4vw;
+}
+.color-1{
+    background:#a81000;
+    height: 0.2vh;
+}
+.color-2{
+    background:#DDDDDD;
+    height: 0.05vh;
+}
+p{
+    font-size: 0.85vw;
+    font-family: 'Lato';
+    color: rgba(51,51,51,255);
+    margin-top: 2vw;
+    margin-bottom: .7vw;
+  }
+ input{
+	border-radius: 1.2vw;
+    height: 2.5vw;
+    padding: .5vw;
+    font-size: 1vw;
+    font-family: 'Lato';
+    color: rgba(128,128,128,255);
+    margin-top: .5vw;
+}
+input:focus {
+    box-shadow: none;
+    border: .1vw solid #a81000;
+}
+ label{
+	font-style: none;
+	font-size: 0.7vw;
+	color: rgba(51,51,51,255);
+	font-family: 'Lato';
+    font-weight: bold;
+    margin-bottom: 0;
+}
+input[type=checkbox] {
+  width: .7vw;
+  height: .7vw;
+  border: 5px solid  #DDDDDD;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+button{
+	white-space: nowrap;
+	border:1px solid #a81000;
+    background:#a81000;
+    font-family: 'Lato';
+    color:rgba(255,255,255,255);
+    padding: .3vw;
+    font-weight: bold;
+    font-size: 0.7vw;
+    margin: 2vw 1vw;
+}
+.red{
+    color: red;
+    margin-left: .3vw;
+    font-size: 1.2vw;
+}
+.error{
+  color: #a81000;
+  font-size: .85vw;
+}
+.form-control.is-invalid{
+  border-color: #a81000;
+  background-image: none;
+  box-shadow: none;
+}
+.form-group{
+  padding: 0vw .2vw .2vw .2vw;
+  margin-bottom: .5vw;
+}

@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+       
+         <div class="container-fluid">
+          <div class="row d-flex">
+           
+               <div class="col-6 left-banner" *ngIf="rows[0]">
+                  <a [routerLink]="['/productdetailspage', rows[0].thumbnail_label]">
+                    <img src="assets/images/pic1.png" alt="bitmap1.png" class="img-fluid">
+                  </a>
+                  <div class="row d-flex flex-column bottom-right align-items-end">
+                      <div class="col-9"> <h1>{{rows[0].thumbnail_label}}</h1> </div>
+                      <div class="col-9"> 
+                          <p *ngIf="rows[0].sale=='no'" > {{rows[0].price | currency}}</p>
+                          <p *ngIf="rows[0].sale=='yes' "> <del> {{rows[0].price | currency }} </del> <b> {{rows[0].price-((rows[0].sale_percent/100)*rows[0].price) | currency }} </b> </p>
+                       </div>
+                      <div class="col-9"> <BUTTON (click)="adduser(rows[0].thumbnail_label, rows[0].price-((rows[0].sale_percent/100)*rows[0].price) ,rows[0].thumbnail,rows[0].visibility)">ADD TO CART</BUTTON></div>                    
+                  </div>
+               </div>               
+               <div class="col-6 right-banner " *ngIf="rows[1]">
+                  <a [routerLink]="['/productdetailspage', rows[1].thumbnail_label]">
+                    <img src="assets/images/pic2.png" alt="bitmap1.png" class="img-fluid">
+                  </a>
+                  <div class="row d-flex flex-column bottom-left align-items-start ">
+                      <div class="col-9"> <h1>{{rows[1].thumbnail_label}}</h1> </div>
+                      <div class="col-9">
+                        <p *ngIf="rows[1].sale=='no'" > {{rows[1].price | currency}}</p>
+                        <p *ngIf="rows[1].sale=='yes' "> <del> {{rows[1].price | currency }} </del> <b> {{rows[1].price-((rows[1].sale_percent/100)*rows[1].price) | currency }} </b> </p>
+                      </div>
+                      <div class="col-9"> <BUTTON (click)="adduser(rows[1].thumbnail_label, rows[1].price-((rows[1].sale_percent/100)*rows[1].price) ,rows[1].thumbnail,rows[1].visibility)">ADD TO CART</BUTTON></div>                    
+                  </div>
+               </div>
+          </div>
+       </div>
+
+
+      <div class="centered">
+          <h3>FREE SHIPPING OVER $100 ALL PRODUCTS</h3>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+  

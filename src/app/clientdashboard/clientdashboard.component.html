@@ -1,0 +1,317 @@
+<app-header></app-header>
+<div class="container-fluid" >
+   <div class="row d-flex align-items-center justify-content-center">
+      <div class="col-9 d-flex">
+            <div class="col-2">
+                 <h1>MY ACCOUNT</h1>
+                <ul class="tabs" id="maps">
+                    <li class="tab-link current" data-tab="tab-1"> <i class="fa fa-caret-right" aria-hidden="true"></i>Account Dashboard</li>
+                    <li class="tab-link" data-tab="tab-2"><i class="fa fa-caret-right" aria-hidden="true"></i>Account Information</li>
+                    <li class="tab-link" data-tab="tab-3"><i class="fa fa-caret-right" aria-hidden="true"></i>Address Book</li>
+                    <li class="tab-link" data-tab="tab-4"><i class="fa fa-caret-right" aria-hidden="true"></i>Invoice</li>
+                    <li class="tab-link" data-tab="tab-5"><i class="fa fa-caret-right" aria-hidden="true"></i>Orders</li>
+                </ul>
+            </div>
+            <div class="col-10" style="padding: 0vw 3vw;">
+                <h1 style="color: #a81000;">MY DASHBOARD <a class="nav-link" href="javaScript:void(0)" (click)="logout()">Logout</a></h1>
+                <div id="tab-1" class="tab-content current">
+                    <div class="green">
+                        Hello, aaa aa!From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information
+                    </div>
+                    <h1>ACCOUNT INFORMATION</h1>
+                    <div class="col-12">
+                         <div class="row d-flex align-items-between justify-content-around">
+                            <div class="col-5 box-shadow">
+                                <h2>  CONTACT INFORMATION </h2>
+                                <div class="line">
+                                    <span class="color-1"></span>
+                                    <span class="color-2"></span>
+                                </div>
+                                <div class="innerbox">
+                                    <p> {{registrationForm.value.firstname}} {{registrationForm.value.lastname}}</p>
+                                    <p> {{registrationForm.value.email}}</p>
+                                    <p> {{registrationForm.value.telephone}}</p>
+                                </div>
+                            </div>
+                            <div class="col-5 box-shadow" >
+                                <h2>  NEWSLETTERS </h2>
+                                <div class="line">
+                                    <span class="color-1"></span>
+                                    <span class="color-2"></span>
+                                </div>
+                                <div class="innerbox">
+                                    <p>You are currently not subscribed to any newsletter.</p>
+                                </div>
+                            </div>
+                         </div>
+                         <!---->
+                         <div class="row d-flex align-items-between justify-content-between" >
+                            <div class="col-12 box-shadow">
+                                <h2>  ADDRESS BOOKManage Addresses </h2>
+                                <div class="line">
+                                    <span class="color-1"></span>
+                                    <span class="color-2"></span>
+                                </div>
+                                <div class="col-12 d-flex innerbox">
+                                   <div class="col-6">
+                                        <p><b>Default Billing Address</b></p>
+                                        <p>{{registrationForm.value.country}}</p>
+                                        <p>{{registrationForm.value.city}}</p>
+                                        <p>{{registrationForm.value.address}}</p>
+                                        <p>{{registrationForm.value.postcode}}</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p><b>Default Shipping Address</b></p>
+                                        <p>You have not set a default billing address.</p>
+                                    </div>
+                                </div>        
+                            </div>
+                         </div>
+                         <!---->
+                    </div>
+                </div>
+                <!--tab 1 end-->
+                <!--tab 2-->
+                <div id="tab-2" class="tab-content">
+                    <div class="col-12">
+                        <div class="row d-flex align-items-between justify-content-between">
+                            <div class="col-12 box-shadow">
+                                <h2>  ACCOUNT INFORMARION </h2>
+                                <div class="line">
+                                    <span class="color-1"></span>
+                                    <span class="color-2"></span>
+                                </div>
+                                <div>
+                                    <form [formGroup]="registrationForm" >
+                                        <div class="col-12 d-flex flex-column">
+                                            
+                                            <div class="d-flex">
+                                                <div class="form-group col-md-6 col-lg-6">
+                                                    <label for="firstname">FIRST NAME <small class="red">*</small></label>
+                                                    <input formControlName="firstname"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }">
+                                                    <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                                                        <div class="error" *ngIf="f.firstname.errors.required">First Name is required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6 col-lg-6">
+                                                    <label for="lastname">LAST NAME <small class="red">*</small></label>
+                                                    <input formControlName="lastname"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"> 
+                                                    <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                                                        <div class="error" *ngIf="f.lastname.errors.required">LAST Name is required</div>
+                                                    </div>
+                                                </div>
+                                            </div>    
+                                            <div class="form-group col-md-12 col-lg-12">
+                                                <label for="email">EMAIL ADDRESS <small class="red">*</small> </label>
+                                                <input formControlName="email" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                                    <div class="error" *ngIf="f.email.errors.required">Email is required</div>
+                                                    <div class="error" *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12 col-lg-12">
+                                                <label for="password">PASSWORD <small class="red">*</small></label>
+                                                <input formControlName="password"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"> 
+                                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                                    <div class="error" *ngIf="f.password.errors.required">Password is required</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label><input  type="checkbox" checked="checked"> Change Password</label>
+                                        <div class="col-12 d-flex justify-content-end">
+                                            <button type="submit" (click)="onSubmit1($event)" >SUBMIT</button>
+                                        </div>   
+                                    </form>
+                                </div>                                        
+                                        
+                            </div>
+                         </div>
+                    </div>
+                </div>
+                <!--tab 2 end-->
+                <!--tab 3-->
+                <div id="tab-3" class="tab-content">
+                    <div class="col-12">
+                        
+                        <div class="row d-flex align-items-between justify-content-between">
+                            <div class="col-12 box-shadow">
+                                <h2>  ACCOUNT INFORMARION </h2>
+                                <div class="line">
+                                    <span class="color-1"></span>
+                                    <span class="color-2"></span>
+                                </div>
+                                <div>
+                                    <form [formGroup]="registrationForm" >
+                                        <div class="col-12 d-flex flex-column">
+                                            <h2 style="color:grey;margin: 1vw;">ADDRESS</h2>
+                                            <div class="d-flex">
+                                                <div class="form-group col-md-6 col-lg-6">
+                                                    <label for="firstname">FIRST NAME <small class="red">*</small></label>
+                                                    <input formControlName="firstname"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }">
+                                                    <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                                                        <div class="error" *ngIf="f.firstname.errors.required">First Name is required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6 col-lg-6">
+                                                    <label for="lastname">LAST NAME <small class="red">*</small></label>
+                                                    <input formControlName="lastname"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"> 
+                                                    <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                                                        <div class="error" *ngIf="f.lastname.errors.required">LAST Name is required</div>
+                                                    </div>
+                                                </div>
+                                            </div>    
+                                            <div class="form-group col-md-12 col-lg-12">
+                                                <label for="company">COMPANY</label>
+                                                <input formControlName="company" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.company.errors }">
+                                                <div *ngIf="submitted && f.company.errors" class="invalid-feedback">
+                                                    <div class="error" *ngIf="f.company.errors.required">Company is required</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="form-group col-md-6 col-lg-6">
+                                                    <label for="telephone">TELEPHONE <small class="red">*</small></label>
+                                                    <input formControlName="telephone"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }">
+                                                    <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+                                                        <div class="error" *ngIf="f.telephone.errors.required">Telephone is required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6 col-lg-6">
+                                                    <label for="fax">FAX </label>
+                                                    <input formControlName="fax"  type="text" class="form-control"> 
+                                                </div>
+                                            </div>    
+                                            <h2 style="color: grey;margin: 1vw;"><b>ADDRESS</b></h2>
+                                            <div class="form-group col-md-12 col-lg-12">
+                                                <label for="address">STREET ADDRESS <small class="red">*</small> </label>
+                                                <input formControlName="address" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+                                                <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                                                    <div class="error" *ngIf="f.address.errors.required">Street Address is required</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="form-group col-md-6 col-lg-6">
+                                                    <label for="city">CITY <small class="red">*</small></label>
+                                                    <input formControlName="city"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+                                                    <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                                        <div class="error" *ngIf="f.city.errors.required">City is required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6 col-lg-6">
+                                                    <label for="province">STATE/PROVINCE </label>
+                                                    <input formControlName="province"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.province.errors }"> 
+                                                    <div *ngIf="submitted && f.province.errors" class="invalid-feedback">
+                                                        <div class="error" *ngIf="f.province.errors.required">Provinceis required</div>
+                                                    </div>
+                                                </div>
+                                            </div>    
+                                            <div class="d-flex">
+                                                <div class="form-group col-md-6 col-lg-6">
+                                                    <label for="postcode">ZIP/POSTAL CODE <small class="red">*</small></label>
+                                                    <input formControlName="postcode"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.postcode.errors }">
+                                                    <div *ngIf="submitted && f.postcode.errors" class="invalid-feedback">
+                                                        <div class="error" *ngIf="f.postcode.errors.required">Postal Code is required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6 col-lg-6">
+                                                    <label for="country">COUNTRY </label>
+                                                    <input formControlName="country"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }"> 
+                                                    <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                                                        <div class="error" *ngIf="f.country.errors.required">Country is required</div>
+                                                    </div>
+                                                </div>
+                                            </div>    
+ 
+
+                                        </div>
+                                        <label><input  type="checkbox" checked="checked"> Change Password</label>
+                                        <div class="col-12 d-flex justify-content-end">
+                                            <button type="submit" (click)="onSubmit1($event)" >SUBMIT</button>
+                                        </div>   
+                                    </form>
+                                </div>                                        
+                                        
+                            </div>
+                         </div>
+
+
+                    </div>
+                </div>
+                <!--tab 3 end--> 
+                <!--tab 4-->
+                <div id="tab-4" class="tab-content">
+                    <div class="col-12">
+                        <table>
+                            <colgroup>
+                              <col class="fifteen" />
+                              <col class="fifteen" />
+                              <col class="fifteen" />
+                              <col class="twenty" />
+                              <col class="twenty" />
+                              <col class="fifteen" />
+                            </colgroup>
+                            <tr>
+                              <th>Invoice ID</th>
+                              <th>Invoice Date</th>
+                              <th>Order ID</th>
+                              <th>Email</th>
+                              <th>Status</th>
+                              <th>Total Bill</th>
+                            </tr>
+                            <tr *ngFor="let i of invoice">
+                                <td>{{i.invoice_id}}</td>
+                                <td>{{i.invoice_date}}</td>
+                                <td>{{i.order_id}}</td>
+                                <td>{{i.email}}</td>
+                                <td>{{i.status}}</td>
+                                <td>{{i.totalbill}}</td>
+                              </tr>
+                          
+                        </table>
+                    </div>
+                </div>
+                <!--tab 4 end-->
+                <!--tab 5-->
+                <div id="tab-5" class="tab-content">
+                    <div class="col-12">
+                        <table>
+                            <colgroup>
+                              <col class="fifteen" />
+                              <col class="fifteen" />
+                              <col class="fifteen" />
+                              <col class="fifteen" />
+                              <col class="fifteen" />
+                              <col class="ten" />
+                              <col class="fifteen" />
+                            </colgroup>
+                            <tr>
+                              <th>Order ID</th>
+                              <th>Order Date</th>
+                              <th>Email</th>
+                              <th>Status</th>
+                              <th>Total Items</th>
+                              <th>Shippment Charges</th>
+                              <th>Total Bill</th>
+                            </tr>
+                            <tr *ngFor="let o of order">
+                                <td>{{o.order_id}}</td>
+                                <td>{{o.created_at}}</td>
+                                <td>{{o.email}}</td>
+                                <td>{{o.status}}</td>
+                                <td>{{o.total_items}}</td>
+                                <td>{{o.shippment_charges}}</td>
+                                <td>{{o.total_bill}}</td>
+                              </tr>
+                          
+                        </table>
+                    </div>
+                </div>
+                <!--tab 4 end--> 
+
+                
+
+            </div>
+      </div>
+   </div>
+</div>
+
+

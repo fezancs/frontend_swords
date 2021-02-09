@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "~bootstrap/dist/css/bootstrap.css" */
+
+.label{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family:'Lato' ;
+    color:rgba(51,51,51,255);
+    font-weight: bold;
+    font-size: .8vw;
+    /* white-space: nowrap; */
+    padding: 1px;
+    margin: 1px;
+}
+.price{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family:"Droid Serif" ;
+    color:rgba(153,153,153,255);
+    font-size: 1vw;
+    margin-top: .7vw;
+    margin-bottom: .7vw;
+}
+b{
+    font-size: 1.3vw;
+    /* color: #FFBD00; */
+    color: #a81000;
+}

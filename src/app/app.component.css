@@ -1,0 +1,17 @@
+span { display:block; width:10%; float:left; height:5px;}
+.line{
+    width:100%;
+}
+.color-1{
+    background:green;
+    height: 10px;
+}
+.color-2{
+    background:yellow;
+    height: 2px;
+}
+*{
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+}

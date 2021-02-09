@@ -1,0 +1,59 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+h1{
+  color: rgba(51,51,51,255);
+  font-size: 1.09vw;
+  font-weight: bold;
+  font-family:'Lato';
+}
+.car-head p{
+  color: rgba(76,76,76,255);
+  font-size: 0.85vw;
+  font-family:'Lato';
+}
+.card1{
+  text-align: center;
+  background-color: white;
+}
+.card-header1 h3{
+  font-size: .8vw;
+  color: rgba(50,50,50,255);
+  margin-top: .5vw;
+  font-family:'Lato';
+  font-weight: bold;
+}
+.card-text1 {
+  font-size: .7vw;
+  color: #FFD967;
+  font-family:'Lato';
+  margin-top: .3vw;
+}
+.card-header , .card-text{color:dodgerblue}
+
+.swiper-button-prev {
+    color: red; 
+}
+
+.swiper-button-next {
+    color: #000; 
+}
+.card-img-top-250 {
+    max-height: 250px;
+    overflow:hidden;
+}
+.swiper-button-next-unique,.swiper-button-prev-unique{
+  background-color: #DDDDDD;
+  color: white;
+  font-size: 1vw;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  justify-content: center;
+  padding: .3vw;
+}
+.swiper-wrapper{
+  background-color: #E9E9E9;
+  margin-bottom: 2vw;
+}

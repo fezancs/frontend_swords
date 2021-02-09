@@ -1,0 +1,169 @@
+<div class="container-fluid">
+    <div class="d-flex justify-content-end welcomediv">
+       
+       <h4>TRENDING</h4>
+       
+       <div style="width:35%;padding: 0;left: 9%;position: absolute;">
+          <swiper [config]="config1">
+             <div class="swiper-wrapper" style="background-color: #E9E9E9;">
+               <div class="swiper-slide" *ngFor="let slide of trending">
+                   <p>{{slide.news}}</p>
+               </div>
+            </div>
+          </swiper>      
+       </div>
+       <div class="d-flex" style="margin-right: 8vw;">
+         <button class="swiper-button-prev-trending"> < </button>
+         <button class="swiper-button-next-trending"> > </button>
+       </div>
+       
+       
+         <p>WELCOME TO SWORDSKINGDOM</p>
+         <p>MY ACCOUNT</p>
+         <p>DAILY DEAL</p>
+         <p>MY WISHLIST</p>
+         <p routerLink="/clientauth">LOG IN</p>
+      
+ 
+    </div>
+    <hr/>
+   
+ <div class="container-fluid head homeheader" style="z-index: 1;">
+    <div class="row">
+      <div class="col-12">
+       
+       <div class="div1" style="z-index: 8;">
+         <div id="header-box" >                
+           <!--nav 1-->
+           <div id="nav-1" class="align-items-center">
+            <!--left-->
+            <div id="nav1-left">
+             <div class="dropdown">
+                <button class="dropbtn d-inline-flex">ENGLISH<i class="fa fa-chevron-down"></i></button>
+                 <div class="dropdown-content">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                  </div>
+             </div>
+             <div class="dropdown">
+                <button class="dropbtn d-inline-flex">CURRENCY::USD<i class="fa fa-chevron-down"></i></button>
+                 <div class="dropdown-content">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                  </div>
+             </div>
+           </div>
+           <!--left ended-->
+            <!--middle-->
+            <div id="nav1-middle">
+               <img src="assets/images/logo.webp" alt="logo" class="img-fluid" style="width: 16vw;height: 3.5vw;">
+            </div>
+            <!--middle ended-->
+            <!--right-->
+           <div>
+            <div id="nav1-right" class="align-items-center">
+                <div class="d-flex flex-column" style="margin-right: 2vw; padding-right: 2vw;border-right: .1vw solid grey;">
+                   <p style="font-size: 1.13vw;">CALL US NOW</p>
+                   <p style="font-size: 1vw;">+1111111111</p>
+                </div>
+                <i (click)="showcart()" class="fa fa-shopping-bag"> </i> 
+                <p>$750</p>
+             </div>
+             <!--cart-->
+             <div id="mycart"class="cart" >
+                <!--empty cart msg-->
+                <div class="justify-content-center align-items-center cartempty mt-2"> 
+                   <h2>YOUR CART IS EMPTY</h2>
+                </div>
+                <!--empty cart msg ended-->
+ 
+                <!--cart items-->
+                <div class="justify-content-center align-items-center cartdiv " >
+                   <div style="width: 20vw; " class="d-flex flex-column justify-content-start align-items-start " style="border: 2px solid #E9E9E9;">              
+                      <div class="d-flex justify-content-start align-items-center cartdiv mt-2" *ngFor="let u of cartitems">
+                         <div style="width: 20%;">
+                            <img class=" img-fluid cart-img" src="assets/images/productgallery.png"/>
+                         </div>
+                         <div class="justify-content-center align-items-center pl-2" style="width: 80%;">
+                            <h4 class="cart-productname">{{u.name}}</h4>
+                            <p class="cart-productdetail">{{u.quantity}} x ${{u.price}}</p>
+                         </div>
+                         <div class="justify-content-center align-items-center">
+                            <button (click)="removeitem(u.name)" class="cart-cancelbtn" >x</button>
+                         </div>
+                      </div>
+                    </div>
+                    <button (click)="closecart()" routerLink="/cartpage" class="cart-btn">UPDATE CART</button>
+                    <button (click)="closecart()" routerLink="/placeorderpage" class="cart-btn">CHECKOUT</button>
+                </div> 
+                <!--cart items ended-->
+             </div>
+              <!--cart ended-->
+            </div>
+             <!--right-->
+          </div>
+          <!--nav 1 ended-->
+          
+          <!--nav2-->
+         
+          <div class="nav-2">
+             <a href=""> HOME </a>
+             <a href="" routerLink="/shoppage"> SWORDS </a>
+             <a href="" routerLink="/shoppage"> AXES </a>
+             <a href="" routerLink="/shoppage"> KNIVES </a>
+             <a href="" routerLink="/shoppage"> OURSHOP </a>
+             <a href=""> BLOG </a> 
+             <a href="" routerLink="/aboutpage"> CONTACT </a>
+             <button class="org-btn" (mouseover)="showinput()"> SEARCH <i class="fa fa-search" aria-hidden="true"></i> </button>
+             <div class="search-content1">
+                <form action="" class="d-flex" (mouseout)="showinput()">
+                  <input class="inputfield" type="text" placeholder="Search.." name="search">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+ 
+ 
+ 
+          </div>
+          <div id="myOverlay" class="overlay">
+             <div class="overlay-content">
+               <form action="/action_page.php">
+                 <input type="text" placeholder="Search.." name="search">
+                 <button type="submit"><i class="fa fa-search"></i></button>
+               </form>
+             </div>
+           </div>      
+          <!--nav 2 ended-->
+        
+         </div>                     
+ 
+       </div>
+         
+      </div>
+    </div>
+ </div>
+ 
+ 
+ <div class="d-flex justify-content-start align-items-center " style="height: 100%;z-index: 50;position: fixed;top: 0;left: 0;background-color: transparent;">
+   <div class="d-flex flex-column">
+     <div class="animated-div d-flex  justify-content-between align-items-center" >
+       <h5>Facebook</h5>
+       <i class="fa fa-facebook" aria-hidden="true"></i>
+     </div>
+     <div class="animated-div d-flex justify-content-between align-items-center" style="background-color:brown;" >
+       <h5>Pinterest</h5>
+       <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+     </div>
+     <div class="animated-div d-flex justify-content-between align-items-center" style="background-color:lightskyblue;" >
+       <h5 >Twitter</h5>
+       <i class="fa fa-twitter" aria-hidden="true"></i>
+     </div>
+     <div class="animated-div d-flex justify-content-between align-items-center" style="background-color:gray;">
+       <h5>Behance</h5>
+       <i class="fa fa-behance" aria-hidden="true"></i>
+     </div>
+   </div>
+ </div>
+ 

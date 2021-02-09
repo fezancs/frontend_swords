@@ -1,0 +1,475 @@
+*{
+	cursor: context-menu;
+	padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* .sale{
+	background-color:#a81000;
+	font-size: 1.2vw;
+	font-weight: bold;
+	font-family:'Lato';
+	color: black;
+	position: absolute;
+	padding-left: .3vw;
+	padding-right: .3vw;
+	z-index: 5;
+}
+
+
+.outofstock{
+	display: block;
+	background-color: transparent;
+	color: #333333;
+	border: .1vw solid #333333;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center;
+	font-size: 1vw;
+	font-weight: bold;
+	font-family:'Lato';
+  } */
+
+  p{
+	margin-bottom: 0;
+   }
+
+@media only screen and (max-width: 800px) {
+    .divlineheight{
+	  line-height: 1vw;
+	}	
+  }
+a{
+	text-decoration: none;
+}
+.container{
+	padding-left: 1vw;
+	padding-right: 1vw;
+}
+
+.display-inline{
+white-space: nowrap;	
+}
+label{
+    font-size: 0.65vw;
+    font-family: 'Lato';
+    font-weight: bold;
+    color: black;
+}
+.select-btn{
+	width: 8.5vw;
+    border-radius: 1vw;
+    outline: none;
+    border: .2vw solid #E9E9E9;
+    color: #C6C6C6;
+    font-size: 0.65vw;
+     font-family: 'Lato';
+     font-weight: bold;
+     padding: 0.5vw;
+}
+.select-btn option{
+	color: black;
+}
+
+.buttons button{
+	border: .2vw solid #E9E9E9;
+	outline: none;
+	background-color: white;
+	display: inline-flex;
+	padding: .5vw;
+}
+
+.fa{
+	font-size: 1vw;
+	padding: 0;
+	margin: 0;
+}
+.buttons button:nth-child(2)
+{
+	 border-radius: 0.8vw 0vw 0vw 0.8vw;
+}
+.buttons button:nth-child(3)
+{
+	 border-radius: 0vw 0.8vw 0.8vw 0vw;
+}
+#listgrid-container{
+	margin:0;
+	padding: 0;
+}
+#listgrid-container ul { 
+	list-style: none; 
+}
+#listgrid-container li{
+	background-color: white;
+	margin-right: 0.5vw;
+	margin-left: 0.5vw;
+	margin-bottom: 1vw;
+	margin-top: 0;
+}
+#listgrid-container .buttons { 
+	
+}
+
+#listgrid-container .list li { 
+	width: 100%;
+    margin-bottom: 10px;
+    padding:auto;
+    display: flex;
+}
+#listgrid-container .list li img{
+	height: 15vw;
+	width: 100%;
+}
+#listgrid-container .list li .vi_left{
+	width: 35% ; 
+	align-items-center:center; 
+	text-align: center;
+	background-color: #F8F8F8;
+}
+#listgrid-container .list li .vi_right{ 
+	width: 100%;
+	padding-bottom: auto;
+	padding-top: auto;
+	margin-left: 1vw;
+	background-color: #F8F8F8;
+	height: 15vw;
+}
+#listgrid-container .list li .vi_right h3{ 
+	font-size: 1.5vw;
+	/* white-space: nowrap; */
+	color: rgba(51,51,51,255);
+	font-weight: bold;
+	font-family: 'Lato';
+}
+#listgrid-container .list li .vi_right p{ 
+	font-size: .9vw;
+	white-space: nowrap;
+	color: rgba(153,153,153,255);
+}
+#listgrid-container .list li .vi_right span{ 
+	font-size: .7vw;
+	white-space: nowrap;
+	color: #FFDE60;
+}
+
+
+
+#listgrid-container .grid li { 
+	float: left;
+	width: 31%;  	 
+}
+#listgrid-container .grid li img{
+	height: 15vw;
+	width: 100%;
+}
+#listgrid-container .grid li .vi_left{
+	width: 100% ; 
+	align-items-center:center; 
+	text-align: center;
+	background-color: #F8F8F8;
+}
+#listgrid-container .grid li .vi_right{ 
+	width: 100%;
+	text-align: center;
+	align-items: center;
+	margin-bottom: auto;
+	margin-top: auto;
+	background-color: #F8F8F8;
+}
+#listgrid-container .grid li .vi_right h3{ 
+	font-size: 0.75vw;
+	/* white-space: nowrap; */
+	color: rgba(51,51,51,255);
+	font-weight: bold;
+	font-family: 'Lato';
+	margin-bottom: 0;
+}
+#listgrid-container .grid li .vi_right p{ 
+	font-size: 0.6vw;
+	color: rgba(153,153,153,255);
+	white-space: nowrap;
+	margin-bottom: .3vw;
+}
+#listgrid-container .grid li .vi_right span{ 
+	font-size: .7vw;
+	white-space: nowrap;
+	color: #FFDE60;
+}
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: #A4A4A4;
+  float: left;
+  font-size: .8vw;
+  padding: .2vw .4vw;
+  text-decoration: none;
+}
+/*accordian*/
+
+.btn h3{
+	font-weight: bold;
+	margin-top: auto;
+	margin-bottom: auto;
+	color: rgba(76,76,76,255);
+	font-size: 1vw;
+	font-family: 'Lato'; 
+  }
+
+.pclass{
+	cursor: pointer;
+	font-size:.8vw;
+	margin-bottom: 0;
+}
+  .accordian{
+	background: #f3f3f3;
+	  font-weight: bold;
+	  padding: 0.3vw 0.3vw 0.3vw 0.3vw;
+	  font-size: .8vw;
+	  cursor: pointer;
+	  margin-bottom: 0px;
+	  width: 100%;
+	  transition: 0.4s;
+	  justify-content: space-between;
+	  height: 2vw;
+	  text-align: left;
+	  border-bottom: .15vw solid #E9E9E9;
+	  color: rgba(76,76,76,255);
+  }
+  
+  .hidden{
+	background-color: white;
+	display: none;
+	cursor: pointer;
+	border-bottom: .1vw solid  #E9E9E9;
+	padding: .1vw .5vw;
+	color: rgba(76,76,76,255);
+  }
+  .show{
+	display: block;
+	transition: height .35s ease-in-out;
+  }
+  .fa1{
+	margin-right: 1vw;
+	margin-left: .4vw;
+  }
+  .spinner {
+	border: .6vw solid silver;
+	border-top: .6vw solid #337AB7;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	animation: spin 700ms linear infinite;
+	top:50%;
+	left:50%;
+	position: absolute;
+  }
+  @keyframes spin {
+	0% { transform: rotate(0deg) }
+	100% { transform: rotate(-360deg) }
+  }
+
+  /*slider css*/
+  *{
+	padding: 0;
+	margin: 0;
+}
+.ng5-slider::ng-deep .ng5-slider-bubble{
+	font-size: 1vw;
+	padding: .5vw 0vw;
+	bottom: .5vw;	
+}
+.ng5-slider::ng-deep .ng5-slider-bar{
+ background-color: #DDDDDD;
+ height:.38vw;
+}
+.ng5-slider::ng-deep .ng5-slider-selection {
+  background: #FFC700;
+}
+.ng5-slider::ng-deep .ng5-slider-pointer{
+	background-color: #FFC700;
+}
+.ng5-slider::ng-deep .ng5-slider-pointer {
+ width: 1vw;
+ height: 1vw;
+ top: -.35vw; /* Changed from -14px */
+ border: .25vw solid white;
+    outline: none;
+  }
+  .ng5-slider::ng-deep .ng5-slider-pointer:after {
+    display: none;
+  }
+.slider-head {
+	background-color: white;
+	font-weight: bold;
+	font-size: 1vw;
+	color: black;
+	padding: .4vw;
+	margin-top: 2vw;
+	white-space: nowrap;
+}
+.range-slider{
+	background-color: #F8F8F8;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	padding-top:1.5vw;
+	padding-bottom: 1.5vw;
+}
+.slider-footer{
+	background-color:#333333;
+	color: white;
+	font-weight: bold;
+	font-size: 1vw;
+	text-align: center;
+	padding: .4vw;
+	white-space: nowrap;
+}
+.slider-footer:active{
+	background-color: white;
+	color: #333333;
+}
+@media only screen and (max-width: 800px) {
+	.divlineheight{
+	  line-height: 0;
+	}
+	.ng5-slider::ng-deep .ng5-slider-bubble{
+		font-size: 1vw;
+		padding: 1vw 0vw;
+		bottom: 1vw;	
+	}
+	
+  }
+
+/************************************/
+
+  .details{
+	background-color: #F8F8F8;
+	padding-top: .5vw;
+	padding-bottom: .7vw;
+  }
+  .outofstock{
+	display: block;
+	background-color: transparent;
+	color: #333333;
+	border: .1vw solid #333333;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center;
+	font-size: 1vw;
+	font-weight: bold;
+	font-family:'Lato';
+  }
+  .sale{
+	background-color:#a81000;
+	font-size: 1.2vw;
+	font-weight: bold;
+	font-family:'Lato';
+	color: black;
+	position: absolute;
+	top: 4%;
+	right: 6%;
+	padding-left: .5vw;
+	padding-right: .5vw;
+  }
+  
+  /*-------------------------
+  List layout
+--------------------------*/
+
+ul.list {
+	list-style: none;
+	margin: 0 auto;
+	/* text-align: left; */
+  }
+  
+  ul.list li {
+	border-bottom: 1px solid #ddd;
+	overflow: hidden;
+	/* width: 25%; */
+  }
+  
+  .div1{
+   margin-left: 1vw;
+   margin-bottom: 1vw;
+  }
+  .box{
+	margin-bottom: 0vw;
+	width: 100%;
+	position: relative;
+  }
+  .div1:hover{
+	-webkit-box-shadow:0 0 .2vw #666 inset;
+	-moz-box-shadow:0 0 .2vw #666 inset;
+	box-shadow:0 0 1vw #666 ;
+  }
+  .listlabel{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family:'Lato' ;
+	font-weight: bold;
+	font-size: 1.2vw;
+	padding: 0vw ;
+	color: black;
+  }
+  .listprice{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family:"Droid Serif" ;
+	 color:#6A6C6C; 
+	font-size: 1.3vw;
+	margin-bottom: .8vw;
+  }
+  .arrow1{
+	width: 100%;
+	height: 15vw;
+  }
+
+  /*-------------------------
+  Grid layout
+--------------------------*/
+
+ul.grid {
+	list-style: none;
+	margin: 0 auto;
+  }
+  
+  ul.grid li {
+	float: left;
+  }
+  .gridlabel{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family:'Lato' ;
+	font-weight: bold;
+	font-size: .85vw;
+	padding: 0vw .3vw;
+	color: black;
+	text-align: center;
+  }
+  .gridprice{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family:"Droid Serif" ;
+	 color:#6A6C6C; 
+	font-size: 1vw;
+	margin-bottom: .8vw;
+  }
+  .arrow{
+	width: 100%;
+	height: 20vw;
+  }
+  b{
+	font-size: 1.3vw;
+	color:#a81000;
+  }
+  del{
+	color:#6A6C6C; 
+	margin-right: .4vw;
+  }   

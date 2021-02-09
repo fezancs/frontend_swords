@@ -1,0 +1,49 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.div-img{
+	width: 100%;
+	height: 5vw;
+}
+.div-img img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+}
+.div-head{
+	background-color: #F8F8F8;
+	padding-top: 1vw;
+	padding-left: 0.4vw;
+}
+.hot-sales .div-head span{
+	font-size: .6vw;
+	color: #a81000;
+}
+.hot-sales .div-head h4{
+	font-size: 0.75vw;
+	color: rgba(51,51,51,255);
+	font-weight: bold;
+	font-family: 'Lato';
+}
+.hot-sales .div-head p{
+	font-size: .6vw;
+	font-family: 'Lato';
+	color: rgba(153,153,153,255);
+}
+.hot-sales .row{
+	margin-top: .3vw;
+	margin-bottom: .3vw;
+}
+.hot-sales a{
+	text-decoration: none;
+}
+p{
+    font-size: 1vw;
+	font-family: 'Lato';
+	color: black;
+	font-weight: bold;	
+}

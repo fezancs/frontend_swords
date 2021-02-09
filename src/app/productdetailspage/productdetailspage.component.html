@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="container-fluid" >
+	<!--
+	<h3 *ngIf="model">{{model.sku}}</h3>
+	<h3 *ngIf="res">{{res._store}}</h3>
+	-->
+	<div class="row  justify-content-center" style="background-color: #E9E9E9;">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<app-productdetails-table [name]="name" [price]="price" [thumbnail]="thumbnail" [image1]="image1" [image2]="image2" [image3]="image3" [image4]="image4" [image5]="image5" [rating]="rating" [sale]="sale" [sale_percent]="sale_percent"></app-productdetails-table>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid" style="padding-right: 5vw;padding-left: 5vw;">
+			<div class="row d-flex ">
+				<div class="col-3 d-flex flex-column " >
+					<div class="row">
+						<div class="col-12">
+							<app-productdetails-accordian></app-productdetails-accordian>
+							<div class="" style="margin-top: 4vw;">
+								<app-hot-sales></app-hot-sales>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-9" style="padding-left: 1.2vw;">
+					 <app-productdetails-descriptionbox [description]="description" [short_description]="short_description"></app-productdetails-descriptionbox>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<app-productdetails-review></app-productdetails-review>
+<app-related-products></app-related-products>
+<app-subscribe></app-subscribe>

@@ -1,0 +1,218 @@
+<app-header></app-header>
+<section style="background-color: #E9E9E9; padding-top:2vw; padding-bottom: 6vw; ">
+  <section class="divlineheight">
+            <div class="container-fluid" style="padding-left:3.5vw ; padding-right: 3.5vw;">
+              <div class="row d-flex" style="width:100%;background-color: #F5F5F5;padding-top: 1.2vw;padding-bottom: 1.2vw;">
+                
+                <div class="col-3 d-flex justify-content-center align-items-center">
+                    <form action="">
+                            <label for="cars">SORT BY</label>
+                            <select name="category" id="category1" class="select-btn" (change)="onChangesort($event.target.value)">
+                                 <option value="name">Product name</option>
+                                 <option value="price">Product price</option>
+                             </select>
+                          </form>
+                  </div>
+                
+                <div class="col-3 d-flex justify-content-center align-items-center">
+                   <form action="">
+                            <label for="cars">SHOW PAGE</label>
+                            <select name="category" id="category2" class="select-btn" (change)="onChange($event.target.value)">
+                                 <option value="8">8 items</option>
+                                 <option value="12">12 items</option>
+                                 <option value="16">16 items</option>
+                             </select>
+                          </form>
+                </div>
+                
+                <div class="col-3 d-flex justify-content-center align-items-center" >
+                   <form action="">
+                        <label for="cars">SORT BY CATGORY</label>
+                        <select name="category" id="category3" class="select-btn" (change)="onChangecategory($event.target.value)">
+                            <option  value="sword">Sword</option>
+                            <option value="Axe">Axe</option>
+                            <option value="Knife">knife</option>
+                        </select>
+                    </form>
+                </div>
+  
+                <div class="col-3 d-flex justify-content-center align-items-center" style="padding: 0;">
+                <!--list grid icon-->
+                  <div id="listgrid-container"  style="display: flex;">
+                    <div class="buttons">
+                        <label for="list">SELECT VIEW: </label>
+                        <button (click)="layout = 'list'" class="list"><i class="fa fa-list" aria-hidden="true" style="color: grey"></i></button>
+                        <button (click)="layout = 'grid'" class="grid"><i class="fa fa-th" aria-hidden="true" style="color: grey"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <!--list grid icon ended-->
+              </div>
+            </div>
+          </section>
+  
+  <div class="container-fluid " style="margin-top: 1.3vw;width: 100%;padding-right: 3.5vw;padding-left: 3.5vw;">
+    <div class="row d-flex align-self-center ">
+      <div class="col-3 d-flex flex-column">
+        <div class="row">
+          <div class="col-12" style="padding-right: 1vw;padding-left: 0vw;">
+            
+            <div class="" style="background-color: white;">
+              <div class="btn text-center">
+                 <h3>Custom Accordian</h3> 
+              </div>    
+              <div class="row">
+          
+                    <div class="col-12">
+                      
+                      <div *ngFor="let a of category;let i = index">
+                          <div class="accordian" (click)="active = i"> <i class="fa fa1 fa-angle-right"></i> {{a.name}}</div>
+                          <div *ngFor="let b of subcategory" style="padding:0vw 1vw;margin: 0vw;" class="white">
+                              <div *ngIf="a.id == b.parentid" class="hidden"  [ngClass]="active === i ? 'show' : '' "> <p class="pclass" (click)=print(a.name,b.name)>{{b.name}}</p> </div>
+                          </div>
+                      </div>
+                      
+                    </div>
+                  </div>          
+              </div>
+           
+            <!-- <app-shop-accordian></app-shop-accordian> -->
+            <!-- <app-shop-slider></app-shop-slider> -->
+            <div class="container-fluid ">
+              <div class="row">
+                <div class="col-12">
+                  <div class="slider-head">
+                    FILTER BY PRICE 
+                   </div>
+                   <div class="range-slider divlineheight" >
+                     <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+                   </div>
+                   <div class="slider-footer" (click)="getupdatesearchresult(1)">
+                     UPDATESEARCHRESULT
+                   </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div style="margin-top: 2vw;">
+              <app-hot-sales></app-hot-sales>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-9" style="padding: 0;margin: 0" >
+       
+        <div class="row d-flex flex-column">
+            
+          <ul *ngIf="layout == 'grid'"   class="grid" style="border: 1px solid blue;"> 
+             <li style="width: 25%; border: 1px solid red;" *ngFor="let slide of slideData | paginate: { itemsPerPage: limit, currentPage: p, totalItems: total } ">
+                <div class="d-flex flex-column div1">
+                    
+                  <div class="box">
+                      <img src={{slide.thumbnail}} alt={{slide.thumbnail}} class="img-fluid product-img arrow">
+                  
+                      <div class="outofstock" *ngIf="slide.visibility == 0" >
+                          <p>OUT OF STOCK</p>
+                      </div>
+
+                      <div class="sale" *ngIf="slide.sale == 'yes'">
+                          <p> -{{slide.sale_percent}}% </p>
+                      </div>
+                  </div>
+                  <div class="d-flex flex-column justify-content-center align-items-center details">
+                    <h3 class="gridlabel">  {{slide.thumbnail_label}}</h3>
+                    <p class="gridprice" *ngIf="slide.sale=='no'" > {{slide.price | currency}}</p>
+                    <p class="gridprice" *ngIf="slide.sale=='yes' "> <del> {{slide.price | currency}} </del> <b>{{slide.price-((slide.sale_percent/100)*slide.price) | currency}} </b></p>                       
+                  </div>
+
+             </div>
+          </li>  
+        </ul>
+        <ul *ngIf="layout == 'list'"  class="list" style="width: 100%;">
+          <li style="width: 100%;" *ngFor="let slide of slideData">
+            <div class="d-flex div1">
+                    
+              <div class="box col-4">
+                  <img src={{slide.thumbnail}} alt={{slide.thumbnail}} class="img-fluid product-img arrow1">
+              
+                  <div class="outofstock"  *ngIf="slide.visibility == 0">
+                      <p>OUT OF STOCK</p>
+                  </div>
+
+                  <div class="sale" *ngIf="slide.sale == 'yes'">
+                      <p> -{{slide.sale_percent}}% </p>
+                  </div>
+              </div>
+              <div class="col-8 d-flex flex-column justify-content-center align-items-start details" style="padding: 1vw;">
+                <h3 class="listlabel">{{slide.thumbnail_label}}</h3>
+                <p class="listprice" *ngIf="slide.sale=='no'" > {{slide.price | currency}}</p>
+                <p class="listprice" *ngIf="slide.sale=='yes' "> <del> {{slide.price | currency}} </del> <b>{{slide.price-((slide.sale_percent/100)*slide.price) | currency}} </b></p>
+                 
+              </div>
+
+         </div>
+         </li>  
+         
+        </ul>
+
+       
+        </div>
+
+
+         <!-- <div id="listgrid-container">
+           <ul class="grid" style="margin:0;padding: 0">
+             <li *ngFor="let slide of slideData | paginate: { itemsPerPage: limit, currentPage: p, totalItems: total }">
+                   <div class="vi_left d-flex justify-content-end" [routerLink]="['/productdetailspage', slide.thumbnail_label]">
+                
+                    <img src="http://localhost:3000/images/sku4.png" alt="image" class="img-fluid">
+
+                      <div class="sale" *ngIf="slide.sale == 'yes'">
+                      <p style="margin-bottom: 0;">SALE</p>
+                     </div>  
+
+                      <div class="outofstock" *ngIf="slide.visibility == 0">
+                      <p>OUT OF STOCK</p>
+                     </div> 
+
+                   </div>
+                   <div class=" vi_right d-flex flex-column justify-content-center ">
+                       <div>
+                       <span class="fa fa-star checked"></span>
+                       <span class="fa fa-star checked"></span>
+                       <span class="fa fa-star checked"></span>
+                       <span class="fa fa-star"></span>
+                       <span class="fa fa-star"></span>
+                      </div>
+                       <h3 class="title">{{slide.thumbnail_label}}</h3>
+                       <p class="content">{{slide.price}}</p>
+                   </div>
+                   
+            </li>
+         </ul>
+       </div>  -->
+
+       <div class="container-fluid" *ngIf="showloadingspinner" class="spinner"></div>
+         
+
+        <div class="container row justify-content-end "  >
+          <div class="pagination pagination-sm m-0 float-right">
+            <pagination-controls (pageChange)="getPage($event)"></pagination-controls>
+        </div>        
+          <div class="pagination">
+          <a>&laquo;</a>
+          <a>Prev</a>
+          <a>1</a>
+          <a>2</a>
+          <a>3</a>
+          <a>Next</a>
+          <a >&raquo;</a>
+           </div>   
+        </div>
+        </div>
+  
+    </div>
+  </div>
+  </section>
+  <app-subscribe></app-subscribe>

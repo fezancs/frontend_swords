@@ -1,0 +1,101 @@
+<div class="container-fluid" style="background-color: white;">
+    <div class="btn text-center">
+       <h3>Custom Accordian</h3> 
+    </div>    
+    <div class="row">
+
+          <div class="col-12">
+            
+            <div *ngFor="let a of category;let i = index">
+                <div class="accordian" (click)="active = i"> <i class="fa fa1 fa-angle-right"></i> {{a.name}} {{i}}</div>
+                <div *ngFor="let b of subcategory" style="padding:0vw 1vw;margin: 0vw;" class="white">
+                    <div *ngIf="a.id == b.parentid" class="hidden"  [ngClass]="active === i ? 'show' : '' "> <p (click)=print(a.name,b.name)>{{b.name}}</p> </div>
+                </div>
+            </div>
+            
+          </div>
+<!-- 
+
+
+            <div class="col-12">
+                <div class="toggle"><h3><span class="plus"> <i class="fa fa-angle-right"></i> </span><a href="#">SWORD</a></h3>
+                    <div style="display: none;">
+                        <div class="wpb_text_column wpb_content_element">
+                            <div class="wpb_wrapper">
+                                <a href="#" class="" data-parent="#menu2">Sub 1</a><hr>
+                                <a href="#" class="" data-parent="#menu2">Sub 2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+                <hr/>   
+             
+                <div class="toggle"><h3><span class="plus"> <i class="fa fa-angle-right"></i></span><a href="#">SHARP QUALITY </a></h3>
+                    <div style="display: none;">
+                        <div class="wpb_text_column wpb_content_element">
+                            <div class="wpb_wrapper">
+                                <a href="#" class="" data-parent="#menu2">Sub 1</a><hr>
+                                <a href="#" class="" data-parent="#menu2">Sub 2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr/>
+
+                <div class="toggle"><h3><span class="plus"> <i class="fa fa-angle-right"></i> </span><a href="#">MIN AXES </a></h3>
+                    <div style="display: none;">
+                        <div class="wpb_text_column wpb_content_element">
+                            <div class="wpb_wrapper">
+                                <a href="#" class="" data-parent="#menu2">Sub 1</a><hr>
+                                <a href="#" class="" data-parent="#menu2">Sub 2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr/>
+
+                <div class="toggle"><h3><span class="plus"> <i class="fa fa-angle-right"></i> </span><a href="#">CASUAL GOLD </a></h3>
+                    <div style="display: none;">
+                        <div class="wpb_text_column wpb_content_element">
+                            <div class="wpb_wrapper">
+                                <a href="#" class="" data-parent="#menu2">Sub 1</a><hr>
+                                <a href="#" class="" data-parent="#menu2">Sub 2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr/>
+
+                <div class="toggle"><h3><span class="plus"> <i class="fa fa-angle-right"></i> </span><a href="#">FIT KNIVES </a></h3>
+                    <div style="display: none;">
+                        <div class="wpb_text_column wpb_content_element">
+                            <div class="wpb_wrapper">
+                                <a href="#" class="" data-parent="#menu2">Sub 1</a><hr>
+                                <a href="#" class="" data-parent="#menu2">Sub 2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr/>
+                
+                <div class="toggle"><h3><span class="plus"> <i class="fa fa-angle-right"></i></span><a href="#">OTHERS </a></h3>
+                    <div style="display: none;">
+                        <div class="wpb_text_column wpb_content_element">
+                            <div class="wpb_wrapper">
+                                <a href="#" class="" data-parent="#menu2">Sub 1</a><hr>
+                                <a href="#" class="" data-parent="#menu2">Sub 2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>             -->
+    </div>
+</div>
+
+

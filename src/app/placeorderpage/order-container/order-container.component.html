@@ -1,0 +1,70 @@
+
+<div class="container-fluid" style="padding-left: 5vw;padding-right: 5vw;">
+<div class="container payment mx-auto my-1">
+   
+
+  <div class="row d-flex flex-column">
+      <h1 style="margin-top: 3vw"> YOUR ORDERS</h1>
+      <div class="line">
+          <span class="color-1"></span>
+          <span class="color-2"></span>
+      </div>
+      <div class="col-12 d-flex" *ngFor="let u of cartitems">
+        <div>
+        <img src="http://localhost:3000/images/sku4.png" alt="image" class="img-fluid" style="width: 8vw;height: 5vw;border:1px solid  black;">
+      </div> 
+      <div>
+        <!-- <h3>{{u.name}}</h3> -->
+        <h3>axe1Officially Licensed Assassins Creed Aguilar Throwing Knife Set 3 Knives & Box</h3>
+        <div class="d-flex justify-content-between" style="width: 65vw;">
+           <p>Qty:{{u.quantity}}pcs</p>
+           <p>${{u.price * u.quantity}}</p>
+         </div>
+         <hr/>
+      </div> 
+         <hr/>
+      </div>
+      <hr/>
+  </div>
+
+   <div class="row d-flex justify-content-end">
+     <div class="col-12 d-flex justify-content-end">
+        <table>
+          <tr>
+            <th> <p>cart subtotal</p> </th>
+            <th> <h3>${{totalbill}}</h3> </th>
+          </tr>
+          <tr>
+            <th> <p>shipping</p> </th>
+            <th><label><input type="checkbox"> Free Shipping</label></th>
+          </tr>
+          <tr>
+            <th></th>
+            <th><label><input type="checkbox"> Local Delivery</label></th>
+          </tr>
+          <tr style="border-top: .1vw solid #DDDDDD">
+            <th><p>ORDER TOTAL</p> </th>
+            <th> <h1>${{totalbill}} </h1></th>
+          </tr>
+        </table>
+    </div>      
+  </div>  
+
+
+ <hr/>
+ 
+  <div class="row justify-content-end" style="text-align: right;">
+     <div class="col-9">
+        <button  routerLink="/checkoutpage">PLACE ORDER</button>
+     </div>
+  </div>
+
+</div>
+
+</div>
+
+
+
+
+
+

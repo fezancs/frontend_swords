@@ -1,0 +1,214 @@
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center shadow py-5" style="background-color: #E9E9E9;">
+  <div class="row product-header" >
+    <div class="col-12">
+             <h1>FEATURED PRODUCTS </h1>
+    </div>
+  </div>
+  <div class=" row product-header">
+      <div class="col-12 d-flex justify-content-center" style="display: flex; column-gap: 11vw;">
+         <!-- <p>Loram ipsum dollar amet,consectetuer adipiscing</p> -->
+         <div style="display: flex;column-gap: 1.5vw;">
+           <!-- <p> <del style="color: #a81000">NEW ARRIVALS</del></p> -->
+           <p class="pclass" (click)="getbestsellers()" id="bestseller">BEST SELLER</p>
+           <p class="pclass" (click)="getpopular()" id="popular">POPULAR</p>
+           <!-- <p>SPECIAL OFFER</p>
+           <p>LIMITED EDITION</p> -->
+         </div>
+      </div>
+  </div>
+
+
+  <div class="row product-image d-flex justify-content-center" style="margin-top: 1vw;">
+         <div class="col-9">
+           <div class="row">
+             <div class="col-3" *ngFor="let slide of rows;let i = index" >
+               
+               <div class="box" [routerLink]="['/productdetailspage', slide.thumbnail_label]" (mouseover)="active = i" (mouseout)="active = '' ">
+                    <img src={{slide.thumbnail}} alt={{slide.thumbnail}} class="img-fluid product-img">
+                     
+                    <div class="outofstock" *ngIf="slide.visibility == 0">
+                       <p>OUT OF STOCK</p>
+                    </div>
+
+                    <div class="sale" *ngIf="slide.sale == 'yes'">
+                      <p> -{{slide.sale_percent}}% </p>
+                    </div>
+                     
+                    <div class="sword-details">
+                       
+                        <div class="starrating">
+                          <ngb-rating style="margin-top: 0;margin-bottom: .2vw;" [max]="5" [(rate)]=slide.rating [readonly]="true"></ngb-rating>
+                       </div>
+
+                        <h1 class="label"> {{slide.thumbnail_label}}</h1>
+                     
+                        <p class="price" *ngIf="slide.sale=='no'" >{{slide.price | currency}}</p>
+                        <p class="price" *ngIf="slide.sale=='yes' "><del> {{slide.price | currency}} </del> <b> {{slide.price-((slide.sale_percent/100)*slide.price) | currency}} </b> </p>
+                     
+                        <div class="container" >
+                           <div class="row d-flex justify-content-center align-items-center" >
+                              
+                              <div (mouseover)="active = i" (mouseout)="active = '' " (click)="addwishlist(slide.thumbnail_label,slide.price,slide.thumbnail)" class="class-icon d-flex justify-content-center align-items-center" [ngClass]="active === i ? 'myCssClass' : '' " >
+                                 <i  class="fa fa-heart" aria-hidden="true"></i>
+                              </div>
+                               <div (mouseover)="active = i" (mouseout)="active = '' " (click)="adduser(slide.thumbnail_label, slide.price-((slide.sale_percent/100)*slide.price) ,slide.thumbnail,slide.visibility)" class="aa class-addtocart d-flex justify-content-center align-items-center">
+                                  <p>add to cart</p>
+                               </div>
+                               <div (mouseover)="active = i" (mouseout)="active = '' " (click)="showquickview(slide.thumbnail_label)" class="class-icon d-flex justify-content-center align-items-center" [ngClass]="active === i ? 'myCssClass' : '' ">
+                                 <i  class="fa fa-eye" aria-hidden="true"></i>
+                              </div>  
+                                
+                           </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+           </div>
+         </div>         
+  </div>
+        
+ </div>
+</div>
+
+
+ 
+<div class="search-content"  style="display: none;">
+   <span class="closebtn" (click)="closeSearch()" title="Close Overlay">×</span>
+   <div class="container d-flex justify-content-start align-items-center" style="height: 100%;">
+     
+    <div *ngIf="showloadingspinner1" class="spinner1"></div>
+         <!--quickview-->
+        
+<div class="container" style="margin-bottom: 10vh;margin-top: 6vh ;padding-right: 3vw;padding-left: 3vw;">
+   <div class="row">
+     <!--gallery column-->
+     <div class="col-5 div1" style="height:20vw;">
+        <div class="gallery d-flex">
+          <div class="col-2">
+             <div id="slideshow" class="gallery-smallimg d-flex flex-column">
+               <button class="prev"> pre </button>
+                <div>
+                    <a >
+                      <figure>
+                         <img src={{image1}} data-index="3" alt=""> 
+                      </figure>
+                    </a>
+                    <a >
+                     <figure>
+                        <img src={{image2}} data-index="3" alt=""> 
+                     </figure>
+                   </a>
+                   <a >
+                     <figure>
+                        <img src={{image4}} data-index="3" alt=""> 
+                     </figure>
+                   </a>
+                   <a >
+                     <figure>
+                        <img src={{image5}} data-index="3" alt=""> 
+                     </figure>
+                   </a>
+                   <a >
+                     <figure>
+                        <img src={{image5}} data-index="3" alt=""> 
+                     </figure>
+                   </a>
+                </div>
+                <button  class="next">  next </button>
+             </div>
+          </div>
+          <div class="col-10 gallery-largeimg">
+            <img id="displayed-img" alt='' class="img-fluid" src={{image5}} style="height:20vw;width: 100% ">
+          </div>
+        </div>
+     </div>
+     <!--gallery column ended-->
+     <!--second column-->
+     <div class="col-4" style="height: 20vw;">
+        <div class="product-details">
+            <!--div1-->
+            <div class="product-details-header">
+                <p>ELEGENT WATCHES</p>
+                <h2 class="product-name">{{name}}</h2>
+            </div>
+            <!--div2-->
+            <div class="rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <p>REVIEWS</p>
+            </div>
+            <!--div3-->
+            <div class="reviews">
+                <button data-toggle="modal" data-target="#mymodal">WRITE REVIEW</button>
+                    <div class="modal" id="mymodal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4>WRITE REVIEW</h4>
+                                    <button type="button" class="close" data-dismiss="modal"> &times;</button>
+                                </div>
+                                <div class="modal-body">
+                                  <form>
+                                    <input type="text" name="modal-input">
+                                    <button>done</button>
+                                  </form>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                <button> <i class="far fa-heart" style="margin-right: .2vw"></i>ADD TO WISTLIST</button>
+            </div>
+            <!--div4-->
+            <div class="product-description">
+                <p>{{short_description}}</p>                   
+              </div>
+            </div>
+       </div>
+     <!--second column ended-->
+    <!--third column-->
+    <div class="col-3" style="height:20vw;background-color: white;">
+       <div class="cart div">
+                <h3>AVAILABILITY : <span  *ngIf="visibility == 1">INSTOCK</span> <span *ngIf="visibility == 0">OUT OF STOCK</span></h3>
+                <hr/>
+                
+                <div *ngIf="sale == 'yes'">
+                  <p> <del>{{price}}</del>  <small>you saved <span>${{(sale_percent/100)*price}}</span> </small> </p>
+                  <h1 class="product-price" type="text" > {{price-((sale_percent/100)*price)}}</h1>
+               </div>
+               <div *ngIf="sale == 'no'">
+                 <h1 class="product-price" type="text" > {{price}}</h1>
+               </div>
+                  
+                <label for="sharpen">Sharpen:</label>
+                    <br>
+                    <select name="sharpen" id="cars" class="select-btn">
+                        <option value="yes">YES</option>
+                        <option value="no">NO</option>
+                    </select>
+                    <br>
+                    <div *ngIf="sale == 'yes'" > <button (click)="adduser(name,price-(sale_percent/100)*price,image1,visibility)" class="buynow">BUY IT NOW</button></div>
+                    <div *ngIf="sale == 'no'"> <button (click)="adduser(name,price,image1,visibility)" class="buynow">BUY IT NOW</button> </div>
+          
+            </div>
+
+    </div>
+    <!--third column ended-->
+   </div>
+</div>
+
+
+
+
+
+        <!--quickview-->
+        
+   </div>
+ </div>
+
+
+
+

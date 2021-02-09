@@ -1,0 +1,160 @@
+<app-header></app-header>
+<div class="container-fluid" style="padding-left: 5vw;padding-right: 5vw;">
+    <div class="container auth mx-auto my-1">
+       
+        <div class="row ">
+          <div class="col-12 d-flex flex-column align-items-start">
+              <h1> <b> CREATE AN ACCOUNT</b></h1>
+              <div class="line">
+                  <span class="color-1"></span>
+                  <span class="color-2"></span>
+              </div>
+          </div>
+       </div>
+
+      <div class="row">
+         <div class="col-12 d-flex flex-column align-items-center justify-content-center">
+    
+            <div class="col-10">
+               <h1>REGISTERED CUSTOMERS</h1>
+               <form [formGroup]="registrationForm" (ngSubmit)="onSubmit1($event)" >
+                <div class="col-12 d-flex flex-column">
+                    
+                    <div class="d-flex">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="firstname">FIRST NAME <small class="red">*</small></label>
+                            <input formControlName="firstname"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }">
+                            <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                                <div class="error" *ngIf="f.firstname.errors.required">First Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="lastname">LAST NAME <small class="red">*</small></label>
+                            <input formControlName="lastname"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"> 
+                            <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                                <div class="error" *ngIf="f.lastname.errors.required">LAST Name is required</div>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="form-group col-md-12 col-lg-12">
+                        <label for="email">EMAIL ADDRESS <small class="red">*</small> </label>
+                        <input formControlName="email" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div class="error" *ngIf="f.email.errors.required">Email is required</div>
+                            <div class="error" *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="telephone">TELEPHONE <small class="red">*</small></label>
+                            <input formControlName="telephone"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }">
+                            <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+                                <div class="error" *ngIf="f.telephone.errors.required">Telephone is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="fax">FAX </label>
+                            <input formControlName="fax"  type="text" class="form-control"> 
+                        </div>
+                    </div>   
+                    <div class="form-group col-md-12 col-lg-12">
+                        <label for="company">COMPANY</label>
+                        <input formControlName="company" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.company.errors }">
+                        <div *ngIf="submitted && f.company.errors" class="invalid-feedback">
+                            <div class="error" *ngIf="f.company.errors.required">Company is required</div>
+                        </div>
+                    </div>
+                </div>
+                <label><input  type="checkbox" checked="checked"> Sign Up for Newsletter</label>   
+            </form>
+            </div>
+            <div class="col-10">
+                <h1>LOGIN INFORMATION</h1>
+                <form [formGroup]="registrationForm" (ngSubmit)="onSubmit1($event)" >
+                 <div class="col-12 d-flex flex-column">
+                     <div class="d-flex">
+                         <div class="form-group col-md-6 col-lg-6">
+                             <label for="password">PASSWORD <small class="red">*</small></label>
+                             <input formControlName="password"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                 <div class="error" *ngIf="f.password.errors.required">Password is required</div>
+                             </div>
+                         </div>
+                         <div class="form-group col-md-6 col-lg-6">
+                             <label for="conpassword">CONFIRM PASSWORD <small class="red">*</small></label>
+                             <input formControlName="conpassword"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.conpassword.errors }"> 
+                             <div *ngIf="submitted && f.conpassword.errors" class="invalid-feedback">
+                                 <div class="error" *ngIf="f.conpassword.errors.required">Confirm Password is required</div>
+                             </div>
+                         </div>
+                     </div>            
+                 </div>   
+             </form>
+             </div>
+             <div class="col-10">
+                <h1>BILLING INFORMATION</h1>
+                <form [formGroup]="registrationForm" (ngSubmit)="onSubmit1($event)" >
+                 <div class="col-12 d-flex flex-column">
+                    <div class="form-group col-md-12 col-lg-12">
+                        <label for="address">STREET ADDRESS <small class="red">*</small> </label>
+                        <input formControlName="address" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+                        <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                            <div class="error" *ngIf="f.address.errors.required">Street Address is required</div>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="city">CITY <small class="red">*</small></label>
+                            <input formControlName="city"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+                            <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                <div class="error" *ngIf="f.city.errors.required">City is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="province">STATE/PROVINCE </label>
+                            <input formControlName="province"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.province.errors }"> 
+                            <div *ngIf="submitted && f.province.errors" class="invalid-feedback">
+                                <div class="error" *ngIf="f.province.errors.required">Provinceis required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="postcode">ZIP/POSTAL CODE <small class="red">*</small></label>
+                            <input formControlName="postcode"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.postcode.errors }">
+                            <div *ngIf="submitted && f.postcode.errors" class="invalid-feedback">
+                                <div class="error" *ngIf="f.postcode.errors.required">Postal Code is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="country">COUNTRY </label>
+                            <input formControlName="country"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }"> 
+                            <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                                <div class="error" *ngIf="f.country.errors.required">Country is required</div>
+                            </div>
+                        </div>
+                    </div>    
+
+                            
+                 </div>   
+             </form>
+             </div>
+
+         </div>
+         
+
+         <div class="col-12 d-flex justify-content-around">
+            <button type="submit" routerLink="/clientauth">BACK</button>
+            <button type="submit" (click)="onSubmit1($event)" >SUBMIT</button>
+        </div>
+      </div>
+
+    </div>
+</div>
+    
+    
+    
+    
+    
+    
+    

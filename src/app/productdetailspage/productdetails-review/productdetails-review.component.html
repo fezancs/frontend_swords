@@ -1,0 +1,86 @@
+<div class="container-fluid reviews" >
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-9 d-flex flex-column review-box" *ngFor="let r of rows">
+            <div class="client-review" >
+                <div class="container">
+                    <div class="row d-flex">
+                        <div class="col-2 d-flex justify-content-center align-items-center">
+                            <img src="assets/images/hotsales1.png" alt="gallery" class="img-fluid">
+                        </div>
+                        <div class="col-10 d-flex flex-column rating">
+                           <h4> <span class="large"> {{r.headline}} </span> reviews by <small> {{r.firstname}} </small></h4>
+                           <div class="d-flex">
+                             <p>Rating </p>
+                             <div style="font-size: .8vw; color: #a81000;background-color: white;">
+                                <ngb-rating style="margin-top: 0;" [max]="5" [(rate)]=r.rating [readonly]="true"></ngb-rating>
+                             </div>
+                            </div> 
+                           <h5> {{r.comment}} </h5>  
+                       </div>      
+                     </div>
+                </div>
+            </div>
+        </div>       
+    </div>
+
+    <div class="container write-review">
+        <div class="row d-flex justify-content-center align-items-center" >
+           <div class="col-12 d-flex flex-column">
+              <h1>WRITE YOUR OWN REVIEW</h1>
+              <p style="margin-bottom: 0vw;"> how do you rate this produt?</p>
+              <div style="font-size: 1.5vw; color: #a81000;background-color: white;">
+                <ngb-rating style="margin-top: 0;" [max]="5" [(rate)]="currentrate" [readonly]="false"></ngb-rating>
+             </div>
+            
+             <form [formGroup]="reviewsForm" (ngSubmit)="onSubmit1($event)" >
+                <div class="col-12 d-flex flex-column">
+                    
+                    <div class="d-flex">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="firstname">FIRST NAME <small class="red">*</small></label>
+                            <input formControlName="firstname"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }">
+                            <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                                <div class="error" *ngIf="f.firstname.errors.required">First Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="lastname">LAST NAME <small class="red">*</small></label>
+                            <input formControlName="lastname"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"> 
+                            <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                                <div class="error" *ngIf="f.lastname.errors.required">LAST Name is required</div>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="form-group col-md-12 col-lg-12">
+                        <label for="email">EMAIL ADDRESS <small class="red">*</small> </label>
+                        <input formControlName="email" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div class="error" *ngIf="f.email.errors.required">Email is required</div>
+                            <div class="error" *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>  
+                    <div class="form-group col-md-12 col-lg-12">
+                        <label for="headline">Headline</label>
+                        <input formControlName="headline" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.headline.errors }">
+                        <div *ngIf="submitted && f.headline.errors" class="invalid-feedback">
+                            <div class="error" *ngIf="f.headline.errors.required">Headline is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12 col-lg-12">
+                        <label for="comment">COMMENT</label>
+                        <input formControlName="comment" style="height: 8vw;" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.comment.errors }">
+                        <div *ngIf="submitted && f.comment.errors" class="invalid-feedback">
+                            <div class="error" *ngIf="f.comment.errors.required">Comment is required</div>
+                        </div>
+                    </div>
+                </div>   
+            </form>
+            
+           </div>
+           <button class="reviewbtn" type="submit" (click)="onSubmit1($event)">ADD REVIEW</button>
+        </div>
+    </div>
+
+
+</div>
+
