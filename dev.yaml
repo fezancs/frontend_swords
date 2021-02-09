@@ -30,7 +30,7 @@ spec:
     ports:
     - port: 4200
       targetPort: 4200
-      nodePort: 3000
+      nodePort: 30006
     selector:
         app: hello-world
 ---
