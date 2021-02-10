@@ -1,346 +1,240 @@
-<div class="container-fluid billing">
-   <div class="row d-flex justify-content-center align-items-start" >
-       
-    <!--left forms-->
-    <div class="col-6">
-         <!--shipping method-->
-         <!-- <div class="formdiv loginmethod" >
-            <div class="formheader">
-               Checkout Method
-            </div>
-            <div id="login" class="formbody" style="display: block;">
-                <div>
-                    <div class="col-12 d-flex">
-                        <div class="col-6">
-                            <p class="checkout"> <b>ChECKOUT AS A GUEST OR REGISTER </b></p>
-                            <p class="checkout">Register with us for future convenience:</p>
-                            <div class="d-flex align-items-center">
-                                <input type="radio" id="guest" name="guest" value="guest">
-                                <label for="guest">Checkout as Guest</label>
+<div class="container-fluid" style="padding: 3vw 0vw;">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-9">
+
+           <div class="row">
+              <div class="col-12 d-flex">
+                
+                <!--left div-->
+                 <div class="col-8" style="padding-right: 1.5vw;">
+                     
+                    <!--billinginfo-->
+                    <div class="d-flex flex-column">
+                        <div class="row d-flex flex-column">
+                            <h1 class="yourorders"> Billing Info</h1>
+                            <div class="line">
+                              <span class="color-1"></span>
+                              <span class="color-2"></span>
                             </div>
-                            <div class="d-flex align-items-center">
-                                <input type="radio" id="register" name="register" value="register">
-                                <label for="registor">Register</label>
-                            </div> 
-                            <div class="checkout" style="font-size: .8vw;"><b>Register and save time!</b></div>
-                            <div class="checkout">Register with us for future convenience:</div>
                         </div>
-                        <div class="col-6">
-                            
-                            <p class="checkout"> <b>REGISTERED CUSTOMERS</b> </p>
-                            <p class="checkout">If you have an account with us, please log in.</p>
-                            <form [formGroup]="loginForm" >
-                             <div class="col-12 d-flex flex-column">
-                                <app-message></app-message>
-                                 <div class="d-flex flex-column">
-                                     <div class="form-group col-md-12 col-lg-12" style="margin: 0; padding: 0;">
-                                         <label for="emailaddress">EMAIL ADDRESS <small class="red">*</small></label>
-                                         <input formControlName="emailaddress"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f3.emailaddress.errors }">
-                                         <div *ngIf="submitted && f3.emailaddress.errors" class="invalid-feedback">
-                                             <div class="error" *ngIf="f3.emailaddress.errors.required">Email is required</div>
-                                             <div class="error" *ngIf="f3.emailaddress.errors.email">Email must be a valid email address</div>
-                                         </div>
-                                     </div>
-                                     <div class="form-group col-md-12 col-lg-12">
-                                         <label for="password">PASSWORD <small class="red">*</small></label>
-                                         <input formControlName="password"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f3.password.errors }"> 
-                                         <div *ngIf="submitted && f3.password.errors" class="invalid-feedback">
-                                             <div class="error" *ngIf="f3.password.errors.required">Password is required</div>
-                                         </div>
-                                     </div>
-
-                                     <button type="submit" (click)="login($event)" >LOGIN</button>
-
-                                 </div>                       
-                             </div>
-                         </form>
-
-
-                        </div>
+                        <form [formGroup]="billingForm" >
+                            <div class="col-12 d-flex flex-column">
+                                
+                                <div class="d-flex">
+                                    <div class="form-group col-md-6 col-lg-6 paddingclass">
+                                        <label class="labelclass" for="firstname">FIRST NAME <small class="red">*</small></label>
+                                        <input formControlName="firstname"  type="text" class="form-control inputclass" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }">
+                                        <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                                            <div class="error" *ngIf="f.firstname.errors.required">First Name is required</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6 col-lg-6 paddingclass">
+                                        <label class="labelclass" for="lastname">LAST NAME <small class="red">*</small></label>
+                                        <input formControlName="lastname"  type="text" class="form-control inputclass" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"> 
+                                        <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                                            <div class="error" *ngIf="f.lastname.errors.required">LAST Name is required</div>
+                                        </div>
+                                    </div>
+                                </div>    
+    
+                                <div class="form-group col-md-12 col-lg-12 paddingclass">
+                                    <label class="labelclass" for="company">COMPANY NAME</label>
+                                    <input formControlName="company" type="text" class="form-control inputclass" >
+                                </div>
+                                
+                                <div class="d-flex">
+                                    <div class="form-group col-md-6 col-lg-6 paddingclass">
+                                        <label class="labelclass" for="email">EMAIL ADDRESS <small class="red">*</small> </label>
+                                        <input formControlName="email" type="text" class="form-control inputclass" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                            <div class="error" *ngIf="f.email.errors.required">Email is required</div>
+                                            <div class="error" *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6 col-lg-6 paddingclass">
+                                        <label class="labelclass" for="telephone">PHONE NUMBER <small class="red">*</small></label>
+                                        <input formControlName="telephone" type="text" class="form-control inputclass" [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }">
+                                        <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+                                            <div class="error" *ngIf="f.telephone.errors.required">LAST Name is required</div>
+                                        </div>
+                                    </div>  
+                                </div>
+                                <div class="form-group col-md-12 col-lg-12 paddingclass">
+                                    <label class="labelclass" for="country">COUNTRY <small class="red">*</small> </label>
+                                    <input type="text" formControlName="country" class="form-control inputclass" placeholder="United Kingdom" [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
+                                    <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                                        <div class="error" *ngIf="f.country.errors.required">Country is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12 col-lg-12 paddingclass">
+                                    <label class="labelclass" for="address appartment">ADDRESS <small class="red">*</small></label>
+                                    <input  type="text" formControlName="address" class="form-control inputclass" placeholder="Street Address" [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+                                    <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                                        <div class="error" *ngIf="f.address.errors.required">Address is required</div>
+                                    </div>
+    
+                                    <input  type="text" formControlName="appartment" class="form-control inputclass" placeholder="Appartment">
+                                </div>
+    
+                            </div>
+    
+                        </form>
+           
                     </div>
-                    <div class="d-flex justify-content-between">
-                       <button type="submit" (click)="back2($event)" >back</button>
-                       <button type="submit" (click)="onSubmit($event)">contiue</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!--shipping method end-->
-        <!--checkout method-->  
-        <div class="formdiv">
-               <div class="formheader">
-                Billing Information
-               </div>
-               <div id="billinginfo" class="formbody"  style="display: block;">
-                    <form [formGroup]="billingForm" (ngSubmit)="onSubmit1($event)" >
-                        <div class="col-12 d-flex flex-column">
-                            
-                            <div class="d-flex">
-                                <div class="form-group col-md-6 col-lg-6">
-                                    <label for="firstname">FIRST NAME <small class="red">*</small></label>
-                                    <input formControlName="firstname"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }">
-                                    <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
-                                        <div class="error" *ngIf="f.firstname.errors.required">First Name is required</div>
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-6 col-lg-6">
-                                    <label for="lastname">LAST NAME <small class="red">*</small></label>
-                                    <input formControlName="lastname"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"> 
-                                    <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
-                                        <div class="error" *ngIf="f.lastname.errors.required">LAST Name is required</div>
-                                    </div>
-                                </div>
-                            </div>    
-
-                            <div class="form-group col-md-12 col-lg-12">
-                                <label for="company">COMPANY NAME</label>
-                                <input formControlName="company" type="text" class="form-control" >
-                            </div>
-                            
-                            <div class="d-flex">
-                                <div class="form-group col-md-6 col-lg-6">
-                                    <label for="email">EMAIL ADDRESS <small class="red">*</small> </label>
-                                    <input formControlName="email" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
-                                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                                        <div class="error" *ngIf="f.email.errors.required">Email is required</div>
-                                        <div class="error" *ngIf="f.email.errors.email">Email must be a valid email address</div>
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-6 col-lg-6">
-                                    <label for="telephone">PHONE NUMBER <small class="red">*</small></label>
-                                    <input formControlName="telephone" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }">
-                                    <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
-                                        <div class="error" *ngIf="f.telephone.errors.required">LAST Name is required</div>
-                                    </div>
-                                </div>  
-                            </div>
-                            <div class="form-group col-md-12 col-lg-12">
-                                <label for="country">COUNTRY <small class="red">*</small> </label>
-                                <input type="text" formControlName="country" class="form-control" placeholder="United Kingdom" [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
-                                <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
-                                    <div class="error" *ngIf="f.country.errors.required">Country is required</div>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-12 col-lg-12">
-                                <label for="address appartment">ADDRESS <small class="red">*</small></label>
-                                <input  type="text" formControlName="address" class="form-control" placeholder="Street Address" [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
-                                <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
-                                    <div class="error" *ngIf="f.address.errors.required">Address is required</div>
-                                </div>
-
-                                <input  type="text" formControlName="appartment" class="form-control" placeholder="Appartment">
-                            </div>
-
-                        </div>
-
-                        <input type="checkbox" (change)="checkCheckBoxvalue($event)" style="margin-left: 1vw;"> Same address for sending/billing
-
-                        <!-- <div class="d-flex justify-content-between">
-                            <button type="submit" >back</button>
-                            <button type="submit"  >contiue</button>
-                        </div> -->
-                    </form>
-            </div>
-          </div>
-          <!--checkout form-->
-           <div class="formdiv">
-                <div class="formheader">
-                   Shipping Information
-                </div>
-                <div id="shippinginfo" class="formbody" style="display: block;">
-                    <form [formGroup]="shippingForm" (ngSubmit)="onSubmit2($event)" >
-                        <div class="col-12 d-flex flex-column">
-                            <div class="d-flex">
-                                <div class="form-group col-md-6 col-lg-6">
-                                    <label for="firstname">FIRST NAME <small class="red">*</small></label>
-                                    <input formControlName="firstname"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f1.firstname.errors }">
-                                    <div *ngIf="submitted && f1.firstname.errors" class="invalid-feedback">
-                                        <div class="error" *ngIf="f1.firstname.errors.required">First Name is required</div>
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-6 col-lg-6">
-                                    <label for="lastname">LAST NAME <small class="red">*</small></label>
-                                    <input formControlName="lastname"  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f1.lastname.errors }"> 
-                                    <div *ngIf="submitted && f1.lastname.errors" class="invalid-feedback">
-                                        <div class="error" *ngIf="f1.lastname.errors.required">LAST Name is required</div>
-                                    </div>
-                                </div>
-                            </div>    
-
-                            <div class="form-group col-md-12 col-lg-12">
-                                <label for="company">COMPANY NAME</label>
-                                <input formControlName="company" type="text" class="form-control" >
-                            </div>
-                            
-                            <div class="d-flex">
-                                <div class="form-group col-md-6 col-lg-6">
-                                    <label for="email">EMAIL ADDRESS <small class="red">*</small> </label>
-                                    <input formControlName="email" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f1.email.errors }">
-                                    <div *ngIf="submitted && f1.email.errors" class="invalid-feedback">
-                                        <div class="error" *ngIf="f1.email.errors.required">Email is required</div>
-                                        <div class="error" *ngIf="f1.email.errors.email">Email must be a valid email address</div>
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-6 col-lg-6">
-                                    <label for="telephone">PHONE NUMBER <small class="red">*</small></label>
-                                    <input formControlName="telephone" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f1.telephone.errors }">
-                                    <div *ngIf="submitted && f1.telephone.errors" class="invalid-feedback">
-                                        <div class="error" *ngIf="f1.telephone.errors.required">LAST Name is required</div>
-                                    </div>
-                                </div>  
-                            </div>
-                            <div class="form-group col-md-12 col-lg-12">
-                                <label for="country">COUNTRY <small class="red">*</small> </label>
-                                <input type="text" formControlName="country" class="form-control" placeholder="United Kingdom" [ngClass]="{ 'is-invalid': submitted && f1.country.errors }">
-                                <div *ngIf="submitted && f1.country.errors" class="invalid-feedback">
-                                    <div class="error" *ngIf="f1.country.errors.required">Country is required</div>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-12 col-lg-12">
-                                <label for="address appartment">ADDRESS <small class="red">*</small></label>
-                                <input  type="text" formControlName="address" class="form-control" placeholder="Street Address" [ngClass]="{ 'is-invalid': submitted && f1.address.errors }">
-                                <div *ngIf="submitted && f1.address.errors" class="invalid-feedback">
-                                    <div class="error" *ngIf="f1.address.errors.required">Address is required</div>
-                                </div>
-
-                                <input  type="text" formControlName="appartment" class="form-control" placeholder="Appartment">
-                            </div>
-
-                        </div>
-                        <!-- <div class="d-flex justify-content-between">
-                           <button type="submit" (click)="back1($event)" >back</button>
-                           <button type="submit">contiue</button>
-                        </div> -->
-                    </form>
-                </div>
-            </div>
-            <!--form end-->
-            <!--shipping method-->
-            <div class="formdiv">
-                <div class="formheader">
-                   Shipping Method
-                </div>
-                <div id="shippingmethod" class="formbody" style="display: block;">
-                    <div>
-                        <div class="col-12 d-flex flex-column">
-                            <label for="dhl" style="margin-top: 2vw;">DHL</label>
-                            <div style="font-size: .85vw;margin:.5vw 2vw 1vw 2vw;"> Express Shipping $23.00</div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                           <button type="submit" (click)="back2($event)" >back</button>
-                           <button type="submit" (click)="onSubmit3($event)">contiue</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--shipping method end-->
-            <!--payment info-->
-            <!-- <div class="formdiv">
-                <div class="formheader">
-                   Payment Information
-                </div>
-                <div id="paymentinfo" class="formbody" style="display: block;">
-                    <form [formGroup]="shippingForm" (ngSubmit)="onSubmit1($event)" >
-                        <div class="col-12 d-flex flex-column" >
-                            <div class="row d-flex flex-column payment">
-                                <h1 style="margin-top: 1vw"> YOUR ORDERS</h1>
-                                <div class="line">
-                                    <span class="color-1"></span>
-                                    <span class="color-2"></span>
-                                </div>
-                                <div class="col-12" *ngFor="let u of cartitems">
-                                   <h3>{{u.name}}</h3>
-                                   <div class="d-flex justify-content-between">
-                                     <p>Qty:{{u.quantity}}pcs</p>
-                                     <p>${{u.price * u.quantity}}</p>
-                                   </div>
-                                   <hr/>
-                                </div>
-                                <div class="col-12 d-flex justify-content-end">
-                                    <p> Total <b>{{totalbill}} </b></p>
-                                </div>
-                            </div>                          
-                        </div>
-                        <div class="d-flex justify-content-between formbutton">
-                           <button type="submit" (click)="back3($event)">back</button>
-                           <button type="submit" (click)="onSubmit4($event)">contiue</button>
-                        </div>
-                    </form>
-                </div>
-            </div> -->
-            <!--payment info end-->
-            <!--shipping method-->
-            <div class="formdiv">
-                <div class="formheader">
-                   Payment
-                </div>
-                <div id="payment" class="formbody" style="display:block;">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <div id="mypaypalbuttons"></div> 
-                    </div>
-                </div>
-            </div>
-            <!--shipping method end-->
-         </div>
-
-        <!--right form-->
-        <div class="col-3">
-            
-            <div class="formdiv">
-                <div class="leftformheader">
-                    Billing Information
-                </div>
-                <div id="billinginfo1" class="formbody" style="display: none;line-height: .85vw;">
-                    <p class="checkoutprogress"> {{billingForm.value.firstname}}  &ensp; {{billingForm.value.lastname}} </p>
-                    <p class="checkoutprogress"> {{billingForm.value.company}} </p>
-                    <p class="checkoutprogress"> {{billingForm.value.email}} </p>
-                    <p class="checkoutprogress"> {{billingForm.value.telephone}} </p>
-                    <p class="checkoutprogress"> {{billingForm.value.country}} </p>
-                    <p class="checkoutprogress"> {{billingForm.value.address}} </p>
-                    <p class="checkoutprogress"> {{billingForm.value.country}} </p>
-                    <p class="checkoutprogress"> {{billingForm.value.appartment}} </p>
-                    <p class="checkoutprogress"> {{billingForm.value.postcode}} </p>
-                    <p class="checkoutprogress"> {{billingForm.value.town}} </p>
-                </div>
-            </div>
-            <div class="formdiv">
-                <div class="leftformheader">
-                    Shippig Information
-                </div>
-                <div id="shippinginfo1" class="formbody" style="display: none;line-height: .85vw;">
-                    <p class="checkoutprogress"> {{shippingForm.value.firstname}}  &ensp; {{shippingForm.value.lastname}} </p>
-                    <p class="checkoutprogress"> {{shippingForm.value.company}} </p>
-                    <p class="checkoutprogress"> {{shippingForm.value.email}} </p>
-                    <p class="checkoutprogress"> {{shippingForm.value.telephone}} </p>
-                    <p class="checkoutprogress"> {{shippingForm.value.country}} </p>
-                    <p class="checkoutprogress"> {{shippingForm.value.address}} </p>
-                    <p class="checkoutprogress"> {{shippingForm.value.country}} </p>
-                    <p class="checkoutprogress"> {{shippingForm.value.appartment}} </p>
-                    <p class="checkoutprogress"> {{shippingForm.value.postcode}} </p>
-                    <p class="checkoutprogress"> {{shippingForm.value.town}} </p>
-                </div>
-            </div>
-            <div class="formdiv">
-                <div class="leftformheader">
-                    Shipping Method
-                </div>
-                <div id="shippingmethod1" class="formbody" style="display: none;">
-                    <p class="checkoutprogress"> DHL-Shipping Express $23.00</p>
-                </div>
-            </div>
-            <div class="formdiv">
-                <div class="leftformheader">
-                    Payment Method
-                </div>
-                <div  class="formbody" style="display: block;">
+                    <!--billinginfo ended-->
+                    <!--shipping info-->
                    
-                </div>
-            </div>
+                    <div class="d-flex flex-column" style="margin-top: 2vw;">
+                        <div class="row d-flex flex-column">
+                            <h1 class="yourorders"> shipping Info</h1>
+                            <div class="line">
+                                <span class="color-1"></span>
+                                <span class="color-2"></span>
+                            </div>
+                            <div class="d-flex ">
+                                <div class="d-flex align-items-center">
+                                    <input (click)="layout = 'same'" style="margin-left:1vw;margin-right: .2vw;" type="radio" id="radio1" name="name2" value="same"  checked />
+                                    <label class="label" for="radio1">Ship Items to my billing address</label> 
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <input (click)="layout = 'diff'" style="margin-left:4vw ;margin-right: .2vw;" type="radio" id="radio1" name="name2" value="dif" />
+                                    <label class="label" for="radio1" >Ship Items to a different address</label>
+                                </div>
+
+                            </div>
+                            <form [formGroup]="billingForm" *ngIf="layout == 'diff'">
+                                <div class="col-12 d-flex flex-column">
+                                    
+                                    <div class="d-flex" >
+                                        <div class="form-group col-md-6 col-lg-6 paddingclass">
+                                            <label class="labelclass" for="firstname">FIRST NAME <small class="red">*</small></label>
+                                            <input formControlName="firstname"  type="text" class="form-control inputclass" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }">
+                                            <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                                                <div class="error" *ngIf="f.firstname.errors.required">First Name is required</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 col-lg-6 paddingclass">
+                                            <label class="labelclass" for="lastname">LAST NAME <small class="red">*</small></label>
+                                            <input formControlName="lastname"  type="text" class="form-control inputclass" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"> 
+                                            <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                                                <div class="error" *ngIf="f.lastname.errors.required">LAST Name is required</div>
+                                            </div>
+                                        </div>
+                                    </div>    
+        
+                                    <div class="form-group col-md-12 col-lg-12 paddingclass">
+                                        <label class="labelclass" for="company">COMPANY NAME</label>
+                                        <input formControlName="company" type="text" class="form-control inputclass" >
+                                    </div>
+                                    
+                                    <div class="d-flex">
+                                        <div class="form-group col-md-6 col-lg-6 paddingclass">
+                                            <label class="labelclass" for="email">EMAIL ADDRESS <small class="red">*</small> </label>
+                                            <input formControlName="email" type="text" class="form-control inputclass" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                                <div class="error" *ngIf="f.email.errors.required">Email is required</div>
+                                                <div class="error" *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 col-lg-6 paddingclass">
+                                            <label class="labelclass" for="telephone">PHONE NUMBER <small class="red">*</small></label>
+                                            <input formControlName="telephone" type="text" class="form-control inputclass" [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }">
+                                            <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+                                                <div class="error" *ngIf="f.telephone.errors.required">LAST Name is required</div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                    <div class="form-group col-md-12 col-lg-12 paddingclass">
+                                        <label class="labelclass" for="country">COUNTRY <small class="red">*</small> </label>
+                                        <input type="text" formControlName="country" class="form-control inputclass" placeholder="United Kingdom" [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
+                                        <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                                            <div class="error" *ngIf="f.country.errors.required">Country is required</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-12 col-lg-12 paddingclass">
+                                        <label class="labelclass" for="address appartment">ADDRESS <small class="red">*</small></label>
+                                        <input  type="text" formControlName="address" class="form-control inputclass" placeholder="Street Address" [ngClass]="{ 'is-invalid': submitted && f.address.errors }">
+                                        <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                                            <div class="error" *ngIf="f.address.errors.required">Address is required</div>
+                                        </div>
+        
+                                        <input  type="text" formControlName="appartment" class="form-control inputclass" placeholder="Appartment">
+                                    </div>
+        
+                                </div>
+        
+                            </form>
+                        </div>
+                    </div>    
+                    <!--shipping info ended-->
+                    <!--payment-->
+                    <div class="d-flex flex-column" style="margin-top: 2vw;">
+                        <div class="row d-flex flex-column">
+                            <h1 class="yourorders"> Payment</h1>
+                            <div class="line">
+                                <span class="color-1"></span>
+                                <span class="color-2"></span>
+                            </div>
+                        </div> 
+                        <div class="col-5" style="margin-left: 1vw;">
+                           <div id="mypaypalbuttons"></div> 
+                        </div>   
+                    </div>
+                    <!--payment end-->
+                    <div class="col-12 d-flex justify-content-end">
+                         <button class="orderbutton">ORDER</button>
+                    </div>
+                   </div>
+                 <!--left div ended-->
+                 <!--right div-->
+                 <div class="col-4">
+               
+                    <div class="col-lg-12 col-12 d-flex flex-column justify-content-center">
+                        <h1 class="h1heading" >YOUR CART</h1>
+                        <div style="padding-top:1.5vw;">
+            
+                          <div class="d-flex flex-column" *ngFor="let u of cartitems" >
+                               <div class="d-flex justify-content-around">
+                                    <div class="col-2 col-md-4 col-lg-4">
+                                        <img src="http://34.66.243.232:3000/images/sku4.png" alt="image" class="img-fluid" style="width: 100%;height: 7vw;border:1px solid  black;">
+                                    </div>
+                                    <div class="d-flex flex-column col-7 col-md-5 col-lg-5" >
+                                       <h5 class="ordername">{{u.name}}</h5>
+                                       <p class="orderprice">Qty:{{u.quantity}}</p>
+                                       <p class="orderprice">Price:{{u.price | currency}}</p>
+                                    </div>
+                                    <div class="col-1 col-md-1 col-lg-1">
+                                       <p class="orderprice">{{u.price | currency}}</p>
+                                    </div>
+                               </div>
+                               <div class="col-12">
+                                <hr>
+                               </div>
+                          </div>
+                          <div class="col-12 d-flex justify-content-end">
+                            <div class="d-flex flex-column">
+                                <h5 class="ordername" style="font-weight: bold;" >cart subtotal:{{totalbill | currency}}</h5>
+                                <h5 class="ordername" style="font-weight: bold;" >shipping:0</h5>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="col-12 d-flex justify-content-end align-items-center">
+                            <h5 class="ordername" style="font-weight: bold;" >ORDER TOTAL:</h5>
+                            <h6 class="total"> {{totalbill | currency }} </h6>
+                          </div>
+            
+                        </div>
+                        </div>
+
+
+                 </div>
+                 <!--right div ended-->
+
+              </div>
+           </div>
 
         </div>
-
-
-   </div>
+    </div>    
 </div>
 
 

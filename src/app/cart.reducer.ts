@@ -12,9 +12,9 @@ export interface State {
 
 export const initialState: State = {
   cartitems : [
-    {"name" : "sword" , "price" : 99 ,"image":"http://localhost:3000/images/product.png","quantity" : 1},
-    {"name" : "Flusas Knife" , "price" : 99 ,"image":"http://localhost:3000/images/product.png","quantity" : 2},
-    {"name" : "Number 1 SWORD" , "price" : 99 ,"image":"http://localhost:3000/images/product.png","quantity" : 1}],
+    {"name" : "axe1Officially Licensed Assassins Creed Aguilar Throwing Knife Set 3 Knives & Box" , "price" : 99 ,"image":"http://34.66.243.232:3000/images/product.png","quantity" : 1},
+    {"name" : "axe1 fficially Licensed Assassins Creed Aguilar Throwing Knife Set 3 Knives & Box" , "price" : 99 ,"image":"http://34.66.243.232:3000/images/product.png","quantity" : 2},
+    {"name" : "Number 1 SWORD" , "price" : 99 ,"image":"http://34.66.243.232:3000/images/product.png","quantity" : 1}],
    itemscount : 3,
    totalbill : 386
 };

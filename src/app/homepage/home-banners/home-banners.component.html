@@ -6,7 +6,7 @@
           <div class="row d-flex">
            
                <div class="col-6 left-banner" *ngIf="rows[0]">
-                  <a [routerLink]="['/productdetailspage', rows[0].thumbnail_label]">
+                  <a [routerLink]="['/productdetailspage', rows[0].url_path]">
                     <img src="assets/images/pic1.png" alt="bitmap1.png" class="img-fluid">
                   </a>
                   <div class="row d-flex flex-column bottom-right align-items-end">
@@ -19,7 +19,7 @@
                   </div>
                </div>               
                <div class="col-6 right-banner " *ngIf="rows[1]">
-                  <a [routerLink]="['/productdetailspage', rows[1].thumbnail_label]">
+                  <a [routerLink]="['/productdetailspage', rows[1].url_path]">
                     <img src="assets/images/pic2.png" alt="bitmap1.png" class="img-fluid">
                   </a>
                   <div class="row d-flex flex-column bottom-left align-items-start ">

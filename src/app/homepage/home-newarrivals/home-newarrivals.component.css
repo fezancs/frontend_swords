@@ -347,7 +347,7 @@ padding: 1vw;
   font-size: 2vw;
 }
 .cart span{
-  color: rgba(255,190,0,255);
+  color: #a81000;
 }
 .cart p{
   color: grey;
@@ -389,7 +389,7 @@ font-size: .8vw;
 color: grey;
 }
 .buynow{
-  background-color: #FFBE00;
+  background-color: #a81000;
   border-radius: 3vw;
   width: 8vw;
   font-size: .9vw;
@@ -454,6 +454,7 @@ hr {
     background-color: white;
     transition: all .5s;
     transform: scale(.8);
+    border: 1px solid white;
   }
 
 .label{
@@ -461,12 +462,14 @@ hr {
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
   /* color:#444; */
-  font-weight: bold;
-  font-size: .85vw;
+  /* font-weight: bold; */
+  font-size: 1vw;
   padding: 0vw .3vw;
   margin-bottom: .8vw;
   /* color:#6A6C6C */
-  color: black;
+  /* color: black; */
+  color: #5b5b5f;
+  font-weight: 400;
 }
 .label:hover{
   color: #a81000;
@@ -476,11 +479,13 @@ hr {
   text-decoration: none;
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
-   color:#6A6C6C; 
+   /* color:#6A6C6C;  */
+   color:  #2b2b2d;
   font-size: 1vw;
   /* margin-top: .7vw; */
   margin-bottom: .8vw;
   /* color:black; */
+  font-weight: 400;
 }
 b{
   font-size: 1.3vw;
@@ -488,7 +493,9 @@ b{
   columns: #a81000;
 }
 del{
-  color:#6A6C6C; 
+  font-weight: 400;
+  color: #2b2b2d;
+  /* color:#6A6C6C;  */
   /* color : #0e2f40; */
 }
 .starrating{

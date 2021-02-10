@@ -1,86 +1,79 @@
-<div class="container-fluid d-flex flex-column justify-content-center align-items-center shadow py-5" style="background-color: #E9E9E9;">
-  <div class="row product-header" >
-    <div class="col-12">
-             <h1>FEATURED PRODUCTS </h1>
+<div class="container-fluid info" style="background-color: #E9E9E9">
+    <div class="row d-flex flex-column justify-content-center align-items-center">
+       <div class="col-9">
+           
+          <swiper [config]="config">
+              <div class="car-head">
+                  <!-- <h1>PROFESSIONAL TEAM</h1> -->
+                  <div class="d-flex justify-content-between">
+                    <h1>YOU MAY LIKE</h1>
+                  <div style="text-align: right;margin-bottom: .5vw;">
+                      <button class="swiper-button-prev-unique"> < </button>
+                      <button class="swiper-button-next-unique"> > </button>
+                  </div>
+                  </div>
+              </div>
+              <div class="swiper-wrapper" style="background-color: #E9E9E9">
+                  <div class="swiper-slide col-3" *ngFor="let slide of rows;let i = index" >
+                     
+                      <div class="box" (mouseover)="active = i" (mouseout)="active = '' ">
+                        
+                        <figure>
+                          <img src={{slide.thumbnail}} [routerLink]="['/productdetailspage', slide.url_path]" alt={{slide.thumbnail}} class="img-fluid product-img arrow">
+                        </figure> 
+
+                        <div class="outofstock" *ngIf="slide.visibility == 0">
+                           <p>OUT OF STOCK</p>
+                        </div>
+             
+                        <div class="sale" *ngIf="slide.sale == 'yes'">
+                          <p> -{{slide.sale_percent}}% </p>
+                        </div>
+                         
+                        <div class="sword-details">
+                           
+                            <div class="starrating">
+                              <ngb-rating style="margin-top: 0;margin-bottom: .2vw;" [max]="5" [(rate)]=slide.rating [readonly]="true"></ngb-rating>
+                           </div>
+             
+                            <h1 class="label" [routerLink]="['/productdetailspage', slide.url_path]" > {{slide.thumbnail_label}}</h1>
+                         
+                            <p class="price" *ngIf="slide.sale=='no'" >{{slide.price | currency}}</p>
+                            <p class="price" *ngIf="slide.sale=='yes' "><del> {{slide.price | currency}} </del> <b> {{slide.price-((slide.sale_percent/100)*slide.price) | currency}} </b> </p>
+                         
+                            <div class="container" >
+                               <div class="row d-flex justify-content-center align-items-center" >
+                                  
+                                  <div (mouseover)="active = i" (mouseout)="active = '' " (click)="addwishlist(slide.thumbnail_label,slide.price,slide.thumbnail)" class="class-icon d-flex justify-content-center align-items-center" [ngClass]="active === i ? 'myCssClass' : '' " >
+                                     <i  class="fa fa-heart" aria-hidden="true"></i>
+                                  </div>
+                                   <div (mouseover)="active = i" (mouseout)="active = '' " (click)="adduser(slide.thumbnail_label, slide.price-((slide.sale_percent/100)*slide.price) ,slide.thumbnail,slide.visibility)" class="aa class-addtocart d-flex justify-content-center align-items-center">
+                                      <p>add to cart</p>
+                                   </div>
+                                   <div (mouseover)="active = i" (mouseout)="active = '' " (click)="showquickview(slide.thumbnail_label)" class="class-icon d-flex justify-content-center align-items-center" [ngClass]="active === i ? 'myCssClass' : '' ">
+                                     <i  class="fa fa-eye" aria-hidden="true"></i>
+                                  </div>  
+                                    
+                               </div>
+                            </div>
+             
+                            
+                        </div>
+                    </div>
+
+
+
+
+
+                  </div>
+              </div>
+          </swiper>
+  
+       </div>
     </div>
   </div>
-  <div class=" row product-header">
-      <div class="col-12 d-flex justify-content-center" style="display: flex; column-gap: 11vw;">
-         <!-- <p>Loram ipsum dollar amet,consectetuer adipiscing</p> -->
-         <div style="display: flex;column-gap: 1.5vw;">
-           <!-- <p> <del style="color: #a81000">NEW ARRIVALS</del></p> -->
-           <p class="pclass" (click)="getbestsellers()" id="bestseller">BEST SELLER</p>
-           <p class="pclass" (click)="getpopular()" id="popular">POPULAR</p>
-           <!-- <p>SPECIAL OFFER</p>
-           <p>LIMITED EDITION</p> -->
-         </div>
-      </div>
-  </div>
-
-
-  <div class="row product-image d-flex justify-content-center" style="margin-top: 1vw;">
-         <div class="col-9">
-           <div class="row">
-             <div class="col-3" *ngFor="let slide of rows;let i = index" >
-               
-               <div class="box"  (mouseover)="active = i" (mouseout)="active = '' ">
-                    
-                    <figure [routerLink]="['/productdetailspage', slide.url_path]">
-                      <img src={{slide.thumbnail}} alt={{slide.thumbnail}} class="img-fluid arrow">
-                    </figure>
-                    <div class="outofstock" *ngIf="slide.visibility == 0">
-                       <p>OUT OF STOCK</p>
-                    </div>
-
-                    <div class="sale" *ngIf="slide.sale == 'yes'">
-                      <p> -{{slide.sale_percent}}% </p>
-                    </div>
-                     
-                    <div class="sword-details">
-
-                        <div class="d-flex" style="margin: .5vw;margin-bottom: 1.3vw;">
-                         <p class="shipping" *ngIf="slide.sale == 'yes'" style="padding:0 .3vw;">Sale <Span>|</Span></p>
-                         <p class="shipping" *ngIf="slide.shipping == 0">Free Shipping</p>
-                        </div>
-                       
-                       <div class="starrating">
-                          <ngb-rating style="margin-top: 0;margin-bottom: .2vw;" [max]="5" [(rate)]=slide.rating [readonly]="true"></ngb-rating>
-                       </div>
-
-                        <h1 class="label" [routerLink]="['/productdetailspage', slide.url_path]"> {{slide.thumbnail_label}}</h1>
-                     
-                        <p class="price" *ngIf="slide.sale=='no'" >{{slide.price | currency}}</p>
-                        <p class="price" *ngIf="slide.sale=='yes' "><del> {{slide.price | currency}} </del> <b> {{slide.price-((slide.sale_percent/100)*slide.price) | currency}} </b> </p>
-                     
-                        <div class="container" >
-                           <div class="row d-flex justify-content-center align-items-center" >
-                              
-                              <div (mouseover)="active = i" (mouseout)="active = '' " (click)="addwishlist(slide.thumbnail_label,slide.price,slide.thumbnail)" class="class-icon d-flex justify-content-center align-items-center" [ngClass]="active === i ? 'myCssClass' : '' " >
-                                 <i  class="fa fa-heart" aria-hidden="true"></i>
-                              </div>
-                               <div (mouseover)="active = i" (mouseout)="active = '' " (click)="adduser(slide.thumbnail_label, slide.price-((slide.sale_percent/100)*slide.price) ,slide.thumbnail,slide.visibility)" class="aa class-addtocart d-flex justify-content-center align-items-center">
-                                  <p>add to cart</p>
-                               </div>
-                               <div (mouseover)="active = i" (mouseout)="active = '' " (click)="showquickview(slide.thumbnail_label)" class="class-icon d-flex justify-content-center align-items-center" [ngClass]="active === i ? 'myCssClass' : '' ">
-                                 <i  class="fa fa-eye" aria-hidden="true"></i>
-                              </div>  
-                                
-                           </div>
-                        </div>
-
-                        
-                    </div>
-                </div>
-           </div>
-         </div>         
-  </div>
-        
- </div>
-</div>
-
-
- 
-<div class="search-content"  style="display: none;">
+  
+  <div class="search-content"  style="display: none;">
    <span class="closebtn" (click)="closeSearch()" title="Close Overlay">×</span>
    <div class="container-fluid d-flex justify-content-start align-items-center" style="height: 100%;">
      

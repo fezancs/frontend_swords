@@ -206,12 +206,16 @@ width: 100%;
     padding: 0vw 0vw; 
     color: black;
     font-weight: bold;
-    margin-left: 1.5vw; 
-    margin-right: 1.7vw;
+    padding-left: 1.5vw; 
+    padding-right: 1.7vw;
+    height: 3vw;
+    /* margin-left: 1.5vw; 
+    margin-right: 1.7vw; */
   }
   .nav-2 a:hover{
     text-decoration: none;
-    color: #a81000;
+    color: white;
+    background-color: #a81000 ;
   }
   input[type=text] {
      height: 3vw; 
@@ -221,7 +225,7 @@ width: 100%;
      /* background-color: whitesmoke; */
    -webkit-box-shadow:0 0 .2vw #666 inset;
    -moz-box-shadow:0 0 .2vw #666 inset;
-   box-shadow:0 0 1vw whitesmoke inset;
+   box-shadow:0 0 4vw wheat inset;
   }
   .org-btn{
     background-color: #a81000;

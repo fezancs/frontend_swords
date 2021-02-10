@@ -2,33 +2,32 @@
     <div class="row  d-flex justify-content-center align-items-center">
         <div class="col-3 d-flex justify-content-center align-items-center" (mouseover)="active = 100" [ngClass]="active === 100 ? 'yellowdiv' : '' " style="padding: 1vw;">
             <div>
-                <i class="fas fa-rocket"></i>
+                <i [ngClass]="active === 100 ? 'whitediv' : '' " class="fas f1 fa-rocket"></i>
             </div> 
             <div class="d-flex flex-column">
-                <h2>FREE SHIPPING</h2>
-                <p>Free shipping over $100</p>
+                <h2 [ngClass]="active === 100 ? 'whitediv' : '' "  class="servicename" >FREE SHIPPING</h2>
+                <p [ngClass]="active === 100 ? 'whitediv' : '' "  class="servicedetail" >Free shipping over $100</p>
             </div>  
         </div>
         <div class="col-3 d-flex justify-content-center align-items-center" (mouseover)="active = 200"  [ngClass]="active === 200 ? 'yellowdiv' : '' " style="padding: 1vw;">
             <div>
-                <i class="fas fa-hand-holding-usd"></i>
+                <i [ngClass]="active === 200 ? 'whitediv' : '' " class="fas f1 fa-hand-holding-usd"></i>
             </div> 
         <div class="d-flex flex-column">
-            <h2>MONEY BACK GURNTE</h2>
-            <p>Send to you within 24 hours</p>
+            <h2 [ngClass]="active === 200 ? 'whitediv' : '' " class="servicename" >MONEY BACK GURNTE</h2>
+            <p [ngClass]="active === 200 ? 'whitediv1' : '' " class="servicedetail" >Send to you within 24 hours</p>
         </div>
       </div>
       <div class="col-3 d-flex justify-content-center align-items-center" (mouseover)="active = 300"  [ngClass]="active === 300 ? 'yellowdiv' : '' " style="padding: 1vw;">
         <div>
-            <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+            <i [ngClass]="active === 300 ? 'whitediv' : '' " class="fa f1 fa-volume-control-phone" aria-hidden="true"></i>
         </div> 
     <div class="d-flex flex-column">
-        <h2>24 HOURS SUPPORT</h2>
-                        <p>Call :100 900 12345</p>
+        <h2 [ngClass]="active === 300 ? 'whitediv' : '' " class="servicename" >24 HOURS SUPPORT</h2>
+        <p [ngClass]="active === 300 ? 'whitediv' : '' " class="servicedetail">Call :100 900 12345</p>
     </div>
       </div>
     </div>
 </div>
-
 
 

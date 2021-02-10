@@ -166,7 +166,7 @@
              <li *ngFor="let slide of slideData | paginate: { itemsPerPage: limit, currentPage: p, totalItems: total }">
                    <div class="vi_left d-flex justify-content-end" [routerLink]="['/productdetailspage', slide.thumbnail_label]">
                 
-                    <img src="http://localhost:3000/images/sku4.png" alt="image" class="img-fluid">
+                    <img src="http://34.66.243.232:3000/images/sku4.png" alt="image" class="img-fluid">
 
                       <div class="sale" *ngIf="slide.sale == 'yes'">
                       <p style="margin-bottom: 0;">SALE</p>

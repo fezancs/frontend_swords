@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  @media only screen and (max-width: 800px) {
+    table{
+      line-height: .2;
+    }
+  }
+  table h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3vw;
+    font-weight: bold;
+    color: #a81000;
+  }
+  th, td {
+    padding-left: 10vw;
+    text-align: left;
+  }
+  span{ display:block; width:90%; float:left; height:5px;}
+  span:nth-child(1){
+    width: 10%;
+  }
+  .line{
+      width:100%;
+      margin-bottom: 1.4vw;
+  }
+  .color-1{
+      background:#a81000;
+      height: 0.2vh;
+  }
+  .color-2{
+      background:#DDDDDD;
+      height: 0.05vh;
+  }
+  .yourorders{
+    font-size: 1.25vw;  
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(51,51,51,255);
+    margin-top: 3vw; 
+  }
+  .line{
+    width:100%;
+    margin-bottom: 3vw;
+  }
+  .color-1{
+    background:#a81000;
+    height: 0.2vh;
+  }
+  .color-2{
+    background:#DDDDDD;
+    height: 0.05vh;
+  }
+  hr{
+    margin-top: 1.7vw;
+    margin-bottom: 1.7vw;
+  }
+  .ordername {
+    width: 40%;
+    font-size: 1.3vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(69,69,69,255); 
+  }
+  .orderprice{
+    font-size: 1.1vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(148,148,148,255);  
+  }
+  .rg{
+    margin-right: 2vw;
+  }
+  .circle{
+    border-radius: 50%;
+    height: 1.5vw;
+    width: 1.5vw;
+    font-weight: bold;
+    font-size: 1.2vw;
+    color: #a81000;
+    background-color: #f3f3f3;
+    margin-right: .3vw;
+    cursor: pointer;
+  }
+  .orderbutton{
+    border:1px solid #a81000;
+    background:#a81000;
+    color:rgba(255,255,255,255);
+    font-weight: bold;
+    font-size: 1.22vw;
+    margin-bottom: 2vw;
+    font-weight: bold;
+    padding: .2vw .7vw;
+  }
+  th{
+    font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(69,69,69,255); 
+  }

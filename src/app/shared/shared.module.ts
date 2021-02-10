@@ -10,15 +10,23 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { YoumaylikeComponent } from './youmaylike/youmaylike.component';
 
 @NgModule({
-  declarations: [ProductdetailsQuickviewComponent, SubscribeComponent, HotSalesComponent, RelatedProductsComponent, MessageComponent, HomeheaderComponent, HeaderComponent],
+  declarations: [ProductdetailsQuickviewComponent, SubscribeComponent, HotSalesComponent, RelatedProductsComponent, MessageComponent, HomeheaderComponent, HeaderComponent, YoumaylikeComponent],
   imports: [
     CommonModule,
     NgxUsefulSwiperModule,
     RouterModule,
      NgbModule,
   ],
-  exports:[ProductdetailsQuickviewComponent,SubscribeComponent,HotSalesComponent, RelatedProductsComponent,MessageComponent,HomeheaderComponent,HeaderComponent]
+  exports:[ProductdetailsQuickviewComponent,
+     SubscribeComponent,
+     HotSalesComponent,
+     RelatedProductsComponent,
+     MessageComponent,
+     HomeheaderComponent,
+     HeaderComponent,
+     YoumaylikeComponent]
 })
 export class SharedModule { }

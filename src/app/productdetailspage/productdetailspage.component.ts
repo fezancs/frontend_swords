@@ -45,7 +45,7 @@ export class ProductdetailspageComponent implements OnInit {
   adduser(name :string , price : number): void {
     console.log(price);
     console.log(name);
-    const user: CartItems = {"name" : name , "price" : price ,"image":"http://localhost:3000/images/product.png","quantity" : 1};
+    const user: CartItems = {"name" : name , "price" : price ,"image":"http://34.66.243.232:3000/images/product.png","quantity" : 1};
     
     this.store.dispatch(new CartActions.AddCartItem({"user1":user}));
   }

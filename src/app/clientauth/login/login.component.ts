@@ -4,6 +4,10 @@ import { Router } from '@angular/router';
 import { ClientauthService } from '../services/clientauth.service';
 import { MessageService } from 'src/app/services/message.service';
 import { environment } from '../../../environments/environment';
+import { Store , select } from '@ngrx/store';
+import * as CartActions from '../../cart.actions';
+import * as fromCart from '../../cart.selectors';
+import {CartItems} from '../../cart';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,8 +19,11 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;  
   submitted =false;
   email:string;
+  cartitems : CartItems[] = [];
+  totalbill :number;
 
-  constructor(private fb: FormBuilder,
+  constructor(private store : Store,
+    private fb: FormBuilder,
     private router: Router,
     private authService: ClientauthService,
     private messageService: MessageService) {
@@ -27,6 +34,18 @@ export class LoginComponent implements OnInit {
      }
 
   ngOnInit(): void {
+
+    this.store.pipe(select(fromCart.getCartItems)).subscribe(
+      cartitems => {
+       this.cartitems = cartitems;
+     })
+
+     this.store.pipe(select(fromCart.getTotalBill)).subscribe(
+      totalbill => {
+       this.totalbill = totalbill;
+     })
+
+
     this.createForm();
   }
 

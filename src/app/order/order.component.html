@@ -1,0 +1,81 @@
+<app-header></app-header>
+
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center align-items-center">
+       <div class="col-9">
+           
+          <div class="row d-flex flex-column">
+              <h1 class="yourorders"> YOUR ORDERS</h1>
+              <div class="line">
+                 <span class="color-1"></span>
+                 <span class="color-2"></span>
+              </div>
+          </div> 
+ 
+          <div class="row">
+              <div class="col-12" *ngFor="let u of cartitems">
+ 
+                 <div class="d-flex justify-content-between align-items-center">
+                    <div  style="width: 12%;">
+                     <img src="http://34.66.243.232:3000/images/sku4.png" alt="image" class="img-fluid" style="width: 100%;height: 7vw;border:1px solid  black;">
+                    </div>
+                    <h3 class="ordername">{{u.name}}</h3>
+                    <p class="orderprice">${{u.price}}</p>
+                    <div class="d-flex">
+                        <div class="circle d-flex justify-content-center align-items-center" (click)="dec(u)">-</div>
+                        <p class="orderprice">{{u.quantity}}</p>
+                        <div class="circle d-flex justify-content-center align-items-center" (click)="inc(u)" >+</div>
+                    </div>
+                    <p class="orderprice">${{u.price * u.quantity}}</p>
+                    <div class="circle d-flex justify-content-center align-items-center" (click)="removeitem(u.name)"> <i class="fa fa-trash" aria-hidden="true"></i> </div>
+                 </div>
+                 <hr/>
+ 
+              </div>
+          </div>
+ 
+          <div class="row d-flex justify-content-end">
+           <div class="col-12 d-flex justify-content-end">
+               <div class="d-flex" style="width: 7vw;height: 5vw;margin-right: 20vw;">
+                <img src="assets/images/100-guarantee.jpg" alt="image" class="img-fluid" style="width: 100%;height:100%;margin-right: 4vw;">
+                <img src="assets/images/100-guarantee.jpg" alt="image" class="img-fluid" style="width: 100%;height:100%;">
+               </div>
+              <table>
+                <tr>
+                  <th> cart subtotal </th>
+                  <th> ${{totalbill}}</th>
+                </tr>
+                <tr>
+                  <th> shipping </th>
+                  <th> $0</th>
+                </tr>
+                <tr style="border-top: .1vw solid #DDDDDD;">
+                  <th>ORDER TOTAL</th>
+                  <th> <h1 class="total">${{totalbill}} </h1></th>
+                </tr>
+              </table>
+          </div>      
+        </div>  
+ 
+       <hr/>
+  
+       <div class="row justify-content-end align-items-start" style="text-align: right;margin-bottom: 2vw;">
+          <div class="col-9 d-flex justify-content-between align-items-start">
+               <div class="d-flex flex-column justify-content-start align-items-start" style="margin-top: -.6vw;">
+                  <h5 style="color: #a81000;font-size: 1.5vw;">Questions?Call us at</h5>
+                  <h5 style="color: #a81000;font-size: 1.5vw;" >1234567</h5>
+               </div>
+              <button (click)="redirection()" class="orderbutton">SECURE CHECKOUT</button>
+           </div>
+       </div>
+ 
+       </div>
+    </div>
+ </div>
+ 
+ <div class="container-fluid">
+   <app-youmaylike></app-youmaylike>
+ </div>
+ 
+ 
+ 

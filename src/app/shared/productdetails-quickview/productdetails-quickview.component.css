@@ -222,7 +222,7 @@
         font-size: 2vw;
     }
     .cart span{
-        color: rgba(255,190,0,255);
+        color: #a81000;
     }
     .cart p{
         color: grey;
@@ -264,7 +264,7 @@
       color: grey;
     }
     .buynow{
-        background-color: #FFBE00;
+        background-color: #a81000;
         border-radius: 3vw;
         width: 8vw;
         font-size: .9vw;

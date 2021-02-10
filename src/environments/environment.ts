@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000',
+  apiUrl: 'http://34.66.243.232:3000',
   related_sku: "",
   user_email:"",
   reviewssku:"",

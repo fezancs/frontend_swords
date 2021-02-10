@@ -108,7 +108,7 @@
   margin-bottom: 1.6vw;
 }
 .reviewbtn{
-    background-color: #FFBE00;
+    background-color: #a81000;
     color: white;
     font-size: 1vw;
     border: none;
@@ -116,6 +116,6 @@
     padding: .3vw .7vw;
 }
 .reviewbtn:hover{
-    color:  #FFBE00;
+    color:  #a81000;
     background-color: white;
 }

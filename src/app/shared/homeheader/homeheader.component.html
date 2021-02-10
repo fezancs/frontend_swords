@@ -90,7 +90,7 @@
                                       </div>
                                 </div>
                             </div>
-                            <button (click)="closecart()" routerLink="/cartpage" class="cart-btn">UPDATE CART</button>
+                            <button (click)="closecart()" routerLink="/order" class="cart-btn">VIEW CART</button>
                             <button (click)="closecart()" routerLink="/placeorderpage" class="cart-btn">CHECKOUT</button>
                         </div> 
                         <!--cart items ended-->
@@ -107,13 +107,13 @@
       <!--nav2-->
       <div class="nav-2 d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
-          <a href="" > HOME </a>
-          <a href="" [routerLink]="['/shoppage', 'sword']"> SWORDS </a>
-          <a href="" [routerLink]="['/shoppage', 'axe']"> AXES </a>
-          <a href="" [routerLink]="['/shoppage', 'knife']"> KNIVES </a>
-          <a href="" routerLink="/shoppage"> OURSHOP </a>
-          <a href=""> BLOG </a> 
-          <a href="" routerLink="/aboutpage"> CONTACT </a>
+          <a href="" class="d-flex align-items-center" > HOME </a>
+          <a class="d-flex align-items-center" [routerLink]="['/shoppage', 'sword']"> SWORDS </a>
+          <a class="d-flex align-items-center" [routerLink]="['/shoppage', 'axe']"> AXES </a>
+          <a class="d-flex align-items-center" [routerLink]="['/shoppage', 'knife']"> KNIVES </a>
+          <a class="d-flex align-items-center" routerLink="/shoppage"> OURSHOP </a>
+          <a class="d-flex align-items-center"> BLOG </a> 
+          <a class="d-flex align-items-center" routerLink="/aboutpage"> CONTACT </a>
         </div>
         <form action="" class="d-flex flex-column">
           <div class="d-flex">

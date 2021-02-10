@@ -4,10 +4,15 @@ import { Store , select } from '@ngrx/store';
 import * as CartActions from '../../cart.actions';
 import * as fromCart from '../../cart.selectors';
 import {CartItems} from '../../cart';
-import { HomesliderService } from '../services/homeslider.service';
-import { Trendingnews } from '../models/homeslider';
 import { createAction, props } from '@ngrx/store';
-@Component({
+import { HomesliderService } from '../services/homeslider.service';
+import { Homeslider } from '../models/homeslider';
+import { Trendingnews } from '../models/homeslider';
+import { Popularsearch } from '../models/homeslider';
+import { Trendingproducts } from '../models/homeslider';
+import { Router } from '@angular/router';
+import { FilterallproductsService } from '../services/filterallproducts.service';
+import { FilteredProduct } from '../models/product';@Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
@@ -21,11 +26,56 @@ export class HeaderComponent implements OnInit {
   cartitems : CartItems[] = [];
   totalbill :number;
   itemscount:number;
-  trendingnews1:Trendingnews[]=[];
+  trendingnews:Trendingnews[]=[];
+  popularsearch:Popularsearch[]=[];
+  trendingproducts:Trendingproducts[]=[];
+  products :FilteredProduct[]=[];
+  filteredProducts :FilteredProduct[]=[];
+  newfilteredProducts :FilteredProduct[]=[];
+  private _searchTerm: string;
+  current:number=2;
+  i:number=0;
+  j:number=3;
 
-  constructor(private store : Store,private homesliderService: HomesliderService) { }
-
+  constructor(private store : Store,private homesliderService: HomesliderService,private filteredproducts: FilterallproductsService,
+    private router: Router) { }
   
+    
+    
+    onSearchChange(searchValue: string): void {  
+      console.log(searchValue);
+      localStorage.setItem("filterkeyword",searchValue);
+      this.filteredProducts = this.filterproducts(searchValue);
+      this.newfilteredProducts=this.filteredProducts.slice(this.i,this.j);
+      console.log(this.newfilteredProducts);
+      console.log(this.filteredProducts);
+    }
+     
+    showmore(){
+      if(this.j<this.filteredProducts.length){
+        this.i=this.i+3;
+        this.j=this.j+3;
+        this.newfilteredProducts=this.filteredProducts.slice(this.i,this.j);
+      } 
+      else{
+        return;
+      }
+    }
+    showless(){
+      if(this.i-3>=0){
+        this.i=this.i-3;
+        this.j=this.j-3;
+        this.newfilteredProducts=this.filteredProducts.slice(this.i,this.j);
+      } 
+      else{
+        return;
+      }
+    }
+
+  filterproducts(searchString: string) {
+    return this.products.filter(product =>
+      product.thumbnail_label.toLowerCase().indexOf(searchString.toLowerCase()) !== -1);
+  }
 
   showcart() : void{  
       if($("#mycart").css("display")=="none")
@@ -36,15 +86,15 @@ export class HeaderComponent implements OnInit {
         $("#mycart").css("display", "none");
       }  
   }
-  showinput() : void{  
+  showinput1() : void{  
     console.log("hi");
-    if($(".search-content1").css("display")=="none")
+    if($(".search-content11").css("display")=="none")
     {
       $(".org-btn").css("display", "none");
-      $(".search-content1").css("display", "block");
+      $(".search-content11").css("display", "block");
     }
     else{
-      $(".search-content1").css("display", "none");
+      $(".search-content11").css("display", "none");
       $(".org-btn").css("display", "block");
     }
   
@@ -69,8 +119,14 @@ export class HeaderComponent implements OnInit {
   
 
   ngOnInit(): void {
-    
+
     this.gettrendingnews();
+
+    this.getpopularsearches();
+
+    this.gettrendingproducts();
+
+    this.getfilteredproducts();
 
     this.store.pipe(select(fromCart.getCartItems)).subscribe(
       cartitems => {
@@ -101,60 +157,46 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  slideData = [
-    {
-      name: "assets/images/placeholder.png",
-    },
-    {
-      name: "assets/images/placeholder.png",
-    },
-    {
-      name: "assets/images/placeholder.png",
-    } 
-  ]
-
-  config: SwiperOptions = {
-    pagination: { el: '.swiper-pagination', clickable: true },
-    autoHeight: true,
-    slidesPerView: 1,
-    allowTouchMove: true,
-    autoplay: {
-      delay: 6000,
-      disableOnInteraction: true
-    },
-    
-    on: { slideChange () { 
-    $('header-box').show();
-    console.log('slideChange') } },
-
-    navigation: {
-      nextEl: '.swiper-button-next-unique',
-      prevEl: '.swiper-button-prev-unique'
-    },
-    loop: true
-  };
-
-  trending = [
-    {
-      news :"trending news here",
-    },
-    {
-      news :"trending news here",
-    },
-    {
-      news :"trending news here",
-    } 
-  ]
-
   gettrendingnews() {
     this.homesliderService.gettrendingnews().subscribe(
       result => {
-        this.trendingnews1 = result;
+        this.trendingnews = result;
         console.log(result);
       }
     )
   }
 
+  getpopularsearches() {
+    this.homesliderService.getpopularsearches().subscribe(
+      result => {
+        this.popularsearch = result;
+        console.log(result);
+      }
+    )
+  }
+
+  gettrendingproducts() {
+    this.homesliderService.gettrendingproducts().subscribe(
+      result => {
+        this.trendingproducts = result;
+        console.log(result);
+      }
+    )
+  }
+
+  getfilteredproducts() {
+    this.filteredproducts.getfilteredproducts().subscribe(
+      result => {
+        this.products = result;
+        console.log(this.products);
+      }
+    )
+  }
+
+  search():void{
+    console.log("kkk");
+    this.router.navigateByUrl('/shoppage');
+  }
 
   config1: SwiperOptions = {
     pagination: { el: '.swiper-pagination', clickable: true },

@@ -178,7 +178,7 @@ export class HomeProductlistComponent implements OnInit {
     var price =Number($(".product-price").text());
     var quantity=Number($("#num2").val());
     
-    const user: CartItems = {"name" : name , "price" : price ,"image":"http://localhost:3000/images/product.png" ,"quantity" : quantity};
+    const user: CartItems = {"name" : name , "price" : price ,"image":"http://34.66.243.232:3000/images/product.png" ,"quantity" : quantity};
     
     this.store.dispatch(new CartActions.AddCartItem({"user1":user}));
   }

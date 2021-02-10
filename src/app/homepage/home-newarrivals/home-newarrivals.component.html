@@ -40,9 +40,9 @@
                   </div>
                 <!--2nd row-->
                 <div class="row d-flex">
-                    <div class="col box hover15" [routerLink]="['/productdetailspage', rows[2].thumbnail_label]" style="margin-right: 1vw; " *ngIf="rows[2]" (mouseover)="active = 2"  (mouseout)="active = '' " >
-                     <figure>
-                       <img   src={{rows[2].thumbnail}} alt="swordskingdom" class="img-fluid arrow" >
+                    <div class="col box hover15" style="margin-right: 1vw; " *ngIf="rows[2]" (mouseover)="active = 2"  (mouseout)="active = '' " >
+                     <figure [routerLink]="['/productdetailspage', rows[2].url_path]">
+                       <img src={{rows[2].thumbnail}} alt="swordskingdom" class="img-fluid arrow"  >
                      </figure>  
                        <div class="sale" *ngIf="rows[2].sale == 'yes'">
                         <p>SALE</p>
@@ -55,11 +55,16 @@
 
                        <div class="sword-details">
 
+                        <div class="d-flex" style="margin: .5vw;margin-bottom: 1.3vw;">
+                           <p class="shipping" *ngIf="rows[2].sale == 'yes'" style="padding:0 .3vw;">Sale <Span>|</Span></p>
+                           <p class="shipping" *ngIf="rows[2].shipping == 0">Free Shipping</p>
+                        </div>
+
                        <div class="starrating">
                         <ngb-rating style="margin-top: 0;margin-bottom: .2vw;" [max]="5" [(rate)]=rows[2].rating [readonly]="true"></ngb-rating>
                        </div>
 
-                       <h4 class="product-name label" *ngIf="rows[2]"> {{rows[2].thumbnail_label}} </h4>
+                       <h4 class="product-name label" *ngIf="rows[2]" [routerLink]="['/productdetailspage', rows[2].url_path]"> {{rows[2].thumbnail_label}} </h4>
                        
                        <p class="price" *ngIf="rows[2] && rows[2].sale=='no'" > {{rows[2].price | currency}}</p>
                        <p class="price" *ngIf="rows[2] && rows[2].sale=='yes' "> <del> {{rows[2].price | currency}} </del> {{rows[2].price-((rows[2].sale_percent/100)*rows[2].price) | currency}}</p>
@@ -80,9 +85,11 @@
                        
                        </div>                       
                     </div>
-                    <div class="col box " [routerLink]="['/productdetailspage', rows[3].thumbnail_label]" *ngIf="rows[3]" (mouseover)="active = 3"  (mouseout)="active = '' " >
-                       <img src={{rows[3].thumbnail}} alt="swordskingdom" class="img-fluid arrow">
-                       
+                    <div class="col box " *ngIf="rows[3]" (mouseover)="active = 3"  (mouseout)="active = '' " >
+                       <figure [routerLink]="['/productdetailspage', rows[3].url_path]">
+                           <img src={{rows[3].thumbnail}} alt="swordskingdom" class="img-fluid arrow">
+                       </figure> 
+
                        <div class="sale1" *ngIf="rows[3].sale == 'yes'" >
                          <p>SALE</p>
                        </div>
@@ -93,11 +100,16 @@
 
                        <div class="sword-details">
                         
+                        <div class="d-flex" style="margin: .5vw;margin-bottom: 1.3vw;">
+                           <p class="shipping" *ngIf="rows[3].sale == 'yes'" style="padding:0 .3vw;">Sale <Span>|</Span></p>
+                           <p class="shipping" *ngIf="rows[3].shipping == 0">Free Shipping</p>
+                        </div>
+
                         <div class="starrating">
                            <ngb-rating style="margin-top: 0;margin-bottom: .2vw;" [max]="5" [(rate)]=rows[3].rating [readonly]="true"></ngb-rating>
                         </div>
 
-                       <h3 *ngIf="rows[3]" class="label"> {{rows[3].thumbnail_label}} </h3>
+                       <h3 *ngIf="rows[3]" class="label" [routerLink]="['/productdetailspage', rows[3].url_path]"> {{rows[3].thumbnail_label}} </h3>
                        
                        <p class="price" *ngIf="rows[3] && rows[3].sale=='no'" > {{rows[3].price | currency}}</p>
                        <p class="price" *ngIf="rows[3] && rows[3].sale=='yes' "> <del> {{rows[3].price | currency}} </del> {{rows[3].price-((rows[3].sale_percent/100)*rows[3].price) | currency }}</p>
@@ -128,9 +140,11 @@
               <div class="col-6">
                 <!--1st row-->
                 <div class="row">
-                  <div class="col box" [routerLink]="['/productdetailspage', rows[0].thumbnail_label]" style="margin-right: 1vw; " *ngIf="rows[0]" (mouseover)="active = 0"  (mouseout)="active = '' ">
-                     <img src={{rows[0].thumbnail}} alt="swordskingdom" class="img-fluid arrow" >
-                    
+                  <div class="col box" style="margin-right: 1vw; " *ngIf="rows[0]" (mouseover)="active = 0"  (mouseout)="active = '' ">
+                     <figure [routerLink]="['/productdetailspage', rows[0].url_path]">
+                       <img src={{rows[0].thumbnail}} alt="swordskingdom" class="img-fluid arrow" >
+                     </figure>
+
                      <div class="sale" *ngIf="rows[0].sale == 'yes'">
                         <p style="color: white;"> -{{rows[0].sale_percent}}%</p>
                      </div>
@@ -144,20 +158,19 @@
                         <p>OUT OF STOCK</p>
                      </div>
                      
-
                      <div class="sword-details">
                      
-                        <div class="freeshipping1 d-flex">
-                           <p style="border-right: .1vw solid black;padding-right: .3vw;">SALE</p>
-                           <p style="padding-left:.3vw">free shipping</p>
-                          </div>
+                     <div class="d-flex" style="margin: .5vw;margin-bottom: 1.3vw;">
+                        <p class="shipping" *ngIf="rows[0].sale == 'yes'" style="padding: 0 .3vw;">Sale <Span>|</Span></p>
+                        <p class="shipping" *ngIf="rows[0].shipping == 0" >Free Shipping</p>
+                     </div>
                        
 
-                     <div class="starrating" style="margin-top: 1vw;">
-                        <ngb-rating style="margin-top: 0;margin-bottom: .2vw;" [max]="5" [(rate)]=rows[0].rating [readonly]="true"></ngb-rating>
+                     <div class="starrating">
+                        <ngb-rating  [max]="5" [(rate)]=rows[0].rating [readonly]="true"></ngb-rating>
                      </div>
 
-                     <h3 class="product-name label" *ngIf="rows[0]"> {{rows[0].thumbnail_label}} </h3>
+                     <h3 class="product-name label" *ngIf="rows[0]" [routerLink]="['/productdetailspage', rows[0].url_path]"> {{rows[0].thumbnail_label}} </h3>
                      
                      <p class="price" *ngIf="rows[0] && rows[0].sale=='no'" > {{rows[0].price | currency}}</p>
                      <p class="price" *ngIf="rows[0] && rows[0].sale=='yes' "> <del> {{rows[0].price | currency }} </del> <b> {{rows[0].price-((rows[0].sale_percent/100)*rows[0].price) | currency }} </b> </p>
@@ -178,9 +191,11 @@
                      
                      </div>                       
                   </div>
-                  <div class="col box" [routerLink]="['/productdetailspage', rows[1].thumbnail_label]" *ngIf="rows[1]" (mouseover)="active = 1"  (mouseout)="active = '' " >
-                     <img src={{rows[1].thumbnail}} alt="swordskingdom" class="img-fluid arrow">
-                    
+                  <div class="col box" *ngIf="rows[1]" (mouseover)="active = 1"  (mouseout)="active = '' " >
+                     <figure [routerLink]="['/productdetailspage', rows[1].url_path]">
+                         <img src={{rows[1].thumbnail}} alt="swordskingdom" class="img-fluid arrow">
+                     </figure>
+
                      <div class="sale1" *ngIf="rows[1].sale == 'yes'" >
                         <p>SALE</p>
                      </div>
@@ -190,12 +205,17 @@
                      </div>
 
                      <div class="sword-details">
+
+                     <div class="d-flex" style="margin: .5vw;margin-bottom: 1.3vw;">
+                        <p class="shipping" *ngIf="rows[1].sale == 'yes'" style="padding:0 .3vw;">Sale <Span>|</Span></p>
+                        <p class="shipping" *ngIf="rows[1].shipping == 0">Free Shipping</p>
+                     </div>
                      
                      <div class="starrating">
                         <ngb-rating style="margin-top: 0;margin-bottom: .2vw;" [max]="5" [(rate)]=rows[1].rating [readonly]="true"></ngb-rating>
                      </div>
 
-                     <h3 *ngIf="rows[1]" class="label"> {{rows[1].thumbnail_label}}</h3>
+                     <h3 *ngIf="rows[1]" class="label" [routerLink]="['/productdetailspage', rows[1].url_path]" > {{rows[1].thumbnail_label}}</h3>
 
                      <p class="price" *ngIf="rows[1] && rows[1].sale=='no'" >{{rows[1].price | currency}}</p>
                      <p class="price" *ngIf="rows[1] && rows[1].sale=='yes' "> <del> {{rows[1].price | currency}} </del> {{rows[1].price-((rows[1].sale_percent/100)*rows[1].price) | currency}}</p>
@@ -208,7 +228,7 @@
                            <div (click)="adduser(rows[1].thumbnail_label, rows[1].price-((rows[1].sale_percent/100)*rows[1].price) ,rows[1].thumbnail,rows[1].visibility)" class="class-addtocart d-flex justify-content-center align-items-center">
                               <p>add to cart</p>
                            </div>
-                           <div (click)="showquickview1(rows[1].thumbnail_label)"  class="class-icon d-flex justify-content-center align-items-center" (mouseover)="active = 1"  (mouseout)="active = '' "  [ngClass]="active === 1 ? 'myCssClass' : '' ">
+                           <div (click)="showquickview1(rows[1].url_path)"  class="class-icon d-flex justify-content-center align-items-center" (mouseover)="active = 1"  (mouseout)="active = '' "  [ngClass]="active === 1 ? 'myCssClass' : '' ">
                               <i  class="fa fa-eye" aria-hidden="true"></i>
                            </div> 
                       </div>
@@ -236,13 +256,13 @@
    </div>        
 </div>
 
-<div class="search-content1"  style="display: none;">
+<div class="search-content1 "  style="display: none">
    <span class="closebtn" (click)="closeSearch()" title="Close Overlay">×</span>
-   <div class="container d-flex justify-content-start align-items-center" style="height: 100%;">
+   <div class="container-fluid  d-flex justify-content-start align-items-center" style="top:50%;bottom: 50%;position: absolute">
          
       <div *ngIf="showloadingspinner2" class="spinner1"></div>
-
-      <div class="container" style="margin-bottom: 10vh;margin-top: 6vh ;padding-right: 3vw;padding-left: 3vw;">
+      
+      <div class="container-fluid" style="margin-bottom: 10vh;margin-top: 6vh ;padding-right: 3vw;padding-left: 3vw;">
          <div class="row">
            <!--gallery column-->
            <div class="col-5 div1" style="height:20vw;">

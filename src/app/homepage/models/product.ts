@@ -6,4 +6,6 @@ export interface Product {
     visibility:number,
     rating:number,
     sale_percent:number,
+    url_path : string,
+    shipping :number
 }

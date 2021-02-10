@@ -5,14 +5,14 @@ import { catchError } from 'rxjs/operators';
 import { HttpErrorHandler, HandleError } from '../../services/http-error-handler.service';
 import { environment } from '../../../environments/environment';
 import { Product } from '../models/product';
-import { Quickview } from '../models/quickview';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class YoumaylikeService {
 
-  private apiUrl = `${environment.apiUrl}/displayhotsales`;
+  private apiUrl1 = `${environment.apiUrl}/displaypopular`;
+
   private handleError: HandleError;
 
   httpOptions = {
@@ -30,10 +30,10 @@ export class ProductService {
     this.handleError = this.httpErrorHandler.createHandleError('ProductService')
   }
 
-  gethotsales(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}`)
+  getpopular(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.apiUrl1}`)
     .pipe(
-      catchError(this.handleError('gethotsales', []))
+      catchError(this.handleError('getpopular', []))
     )
   }
 

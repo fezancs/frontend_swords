@@ -13,7 +13,8 @@ const routes: Routes = [{ path: 'checkoutpage', loadChildren: () => import('./ch
  { path: 'clientauth', loadChildren: () => import('./clientauth/clientauth.module').then(m => m.ClientauthModule) },
  { path: 'clientdashboard', loadChildren: () => import('./clientdashboard/clientdashboard.module').then(m => m.ClientdashboardModule) ,canLoad:[ClientauthGuard] },
  { path: 'viewblog', loadChildren: () => import('./viewblog/viewblog.module').then(m => m.ViewblogModule) },
- { path: 'wishlistpage', loadChildren: () => import('./wishlistpage/wishlistpage.module').then(m => m.WishlistpageModule) }, ];
+ { path: 'wishlistpage', loadChildren: () => import('./wishlistpage/wishlistpage.module').then(m => m.WishlistpageModule) },
+ { path: 'order', loadChildren: () => import('./order/order.module').then(m => m.OrderModule) }, ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -46,9 +46,6 @@
   width: 100%;
   height: 20vw; 
 }
-/* .checked {
-  color: #a81000;
-} */
 .sword-details{
   background-color: #F8F8F8;
   text-align: center;
@@ -56,32 +53,28 @@
   padding-bottom: .7vw;
   line-height: 0;
 }
-.sword-details span{
-  font-size: .65vw;
-  padding: 0;
-  margin: 0;
-}
 .label{
   text-decoration: none;
   text-transform: uppercase;
-  font-family:'Lato' ;
-  /* color:#444; */
-  font-weight: bold;
-  font-size: .85vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1vw;
   padding: 0vw .3vw;
   margin-bottom: .8vw;
-  /* color:#6A6C6C */
-  color: black;
+  color: #5b5b5f;
+  font-weight: 400;
+}
+.label:hover{
+  color: #a81000;
+  text-decoration: underline;
 }
 .price{
   text-decoration: none;
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
-   color:#6A6C6C; 
+  color:  #2b2b2d;
   font-size: 1vw;
-  /* margin-top: .7vw; */
   margin-bottom: .8vw;
-  /* color:black; */
+  font-weight: 400;
 }
 b{
   font-size: 1.3vw;
@@ -89,7 +82,7 @@ b{
 }
 del{
   color:#6A6C6C; 
-  /* color : #0e2f40; */
+  margin-right: .4vw;
 }
 .starrating{
   color:#a81000;
@@ -97,38 +90,21 @@ del{
   margin-top: .2vw;
   margin-bottom: .7vw;
 }
-/* .sword-details h1{
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family:'Lato' ;
-  color:rgba(51,51,51,255);
-  font-size: .8vw;
-  font-weight: bold;
-  padding: .2vw;
-  margin: 0;
-} */
-/* .sword-details p{
- text-decoration: none;
-  text-transform: uppercase;
-  font-family:"Droid Serif" ;
-  color:rgba(153,153,153,255);
-  font-size: 1vw;
-  padding: 0;
-  margin-bottom: 1vw;
-  margin-top: .7vw;
-} */
 .box{
-  /* padding-right: .5vw;
-  padding-left: .5vw;
-  padding-top: .5vw;
-  padding-bottom: .5vw; */
   margin-right: 1vw;
   margin-bottom: 1vw;
+  background-color: white;
 }
 .box:hover{
   -webkit-box-shadow:0 0 .2vw #666 inset;
   -moz-box-shadow:0 0 .2vw #666 inset;
   box-shadow:0 0 1vw #666 ;
+}
+.box:hover .arrow{
+  background-color: white;
+  transition: all .5s;
+  transform: scale(.8);
+  border: 1px solid white;
 }
 .centered{
   position: absolute;
@@ -423,7 +399,7 @@ del{
       font-size: 2vw;
   }
   .cart span{
-      color: rgba(255,190,0,255);
+      color: #a81000;
   }
   .cart p{
       color: grey;
@@ -465,7 +441,7 @@ del{
     color: grey;
   }
   .buynow{
-      background-color: #FFBE00;
+      background-color: #a81000;
       border-radius: 3vw;
       width: 8vw;
       font-size: .9vw;

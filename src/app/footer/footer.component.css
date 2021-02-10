@@ -14,6 +14,7 @@
 .footer-text{
   color: rgba(204,204,204,255);
   font-size: 1vw;
+  margin: 1vw 0vw;
 }
 i{
 	margin-right: .2vw;
@@ -44,84 +45,28 @@ i{
 	padding-left: 1vw;
 	padding-right: 1vw;
 }
-input{
- background-color: #1E1E1E;
- color: rgba(107,107,107,255);
- border: none;
- font-size: 0.85vw;
- width: 100%;
- padding: .5vw;
- margin-bottom: .5em;
- font-family:'Lato';
- white-space: nowrap;
-}
 @media only screen and (max-width: 800px) {
   input {
     margin-bottom: .5em;
   }
   .divlineheight{
     line-height: 0;
-  }
-  
-}
-button{
- text-align: center;
- padding: .5vw;
- background-color:#FFCC00;
- color: white;
- margin-top:1vw;
- font-size: .9vw;
- font-weight: bold;
- font-family:'Lato';
- white-space: nowrap; 	
- width: 100%;
-}
-.footer-icon{
-	background-color: #1E1E1E;
-	width: 2vw;
-	height: 2vw;
-	margin: .1vw;
-  text-align: center;
-  font-size: 1.2vw;
-}
-.footer-icon i{
-	color: #666666;
-  font-size: 1vw;
+  }  
 }
 .copyright{
 	color: rgba(76,76,76,255);
-	font-size: .7vw;
+	font-size: 1vw;
 	font-family:'Lato';
     white-space: nowrap;
 }
-#my-p{
-	color: white;
-	font-family:'Lato';
-    white-space: nowrap;
-    font-size: .8vw;
-    font-weight: bold;
-    margin-right: .3vw;
-    margin-top: auto;
-    margin-bottom: auto;
+.image{
+  width: 3.5vw;
+  height: 3vw;
+  margin: .7vw 0vw;
+  margin-right: .4vw;
 }
-#my-input{
-	width: 80%;
-	background-color: white;
-	font-size: .8vw;
-	font-family:'Lato';
-    white-space: nowrap;
-    height: 2vw;
-}
-#my-anchor{
-  background-color: white;	
-  font-size: .8vw;
-  padding-right:  .7vw;
-  padding-top: .3vw;
-  height: 2vw;
-  text-align: center;  
-}
-.box-fa{
-  font-size:4vw;
-  color:#333333;
-  vertical-align: middle;
+.image1{
+  width: 9vw;
+  height: 3vw;
+  margin: .7vw 0vw;
 }

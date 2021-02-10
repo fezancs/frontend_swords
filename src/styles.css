@@ -1,14 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 /* @import "~bootstrap/dist/css/bootstrap.css" */
 
-.label{
+/* .label{
     text-decoration: none;
     text-transform: uppercase;
     font-family:'Lato' ;
     color:rgba(51,51,51,255);
-    font-weight: bold;
     font-size: .8vw;
-    /* white-space: nowrap; */
     padding: 1px;
     margin: 1px;
 }
@@ -20,9 +18,17 @@
     font-size: 1vw;
     margin-top: .7vw;
     margin-bottom: .7vw;
-}
+    font-weight: 400;
+}*/
 b{
     font-size: 1.3vw;
-    /* color: #FFBD00; */
     color: #a81000;
+} 
+img{
+    border: 0px solid transparent;
+}
+.shipping{
+ color: black;
+ font-size: 1vw;
+  text-transform: uppercase; 
 }

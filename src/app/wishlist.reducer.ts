@@ -11,9 +11,9 @@ export interface State {
 
 export const initialState: State = {
   cartitems : [
-    {"name" : "sword" ,"image":"http://localhost:3000/images/product.png" , "price" : 99 ,"quantity" : 1},
-    {"name" : "Flusas Knife" ,"image":"http://localhost:3000/images/product.png", "price" : 99 ,"quantity" : 2},
-    {"name" : "Number 1 SWORD","image":"http://localhost:3000/images/product.png" , "price" : 99 ,"quantity" : 1}],
+    {"name" : "sword" ,"image":"http://34.66.243.232:3000/images/product.png" , "price" : 99 ,"quantity" : 1},
+    {"name" : "Flusas Knife" ,"image":"http://34.66.243.232:3000/images/product.png", "price" : 99 ,"quantity" : 2},
+    {"name" : "Number 1 SWORD","image":"http://34.66.243.232:3000/images/product.png" , "price" : 99 ,"quantity" : 1}],
    itemscount : 3,
    
 };
